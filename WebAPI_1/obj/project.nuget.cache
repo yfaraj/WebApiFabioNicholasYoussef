@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wZ2T00MgNnyNNQtJzckmFGOXa0oD9iBqf4xs0G9rloN1/YbimNToTE1lPOUYFwMt19CnmUNHoycudfa83vnYHQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
