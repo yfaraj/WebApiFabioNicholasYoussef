@@ -25,6 +25,12 @@ namespace WebAPI_2
           public void ConfigureServices(IServiceCollection services)
           {
                services.AddControllers();
+
+               services.AddApiVersioning(options =>
+               {
+                    options.ReportApiVersions = true;
+                    options.UseApiBehavior = true;
+               });
           }
 
           // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

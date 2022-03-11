@@ -17,14 +17,14 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebAPI_2": {
-      "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "weatherforecast",
-      "applicationUrl": "http://localhost:5002",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    }
+     "WebAPI_2": {
+          "commandName": "Project",
+          "launchBrowser": true,
+          "launchUrl": "WebAPI/V1/GetFileData",
+          "applicationUrl": "http://localhost:5002",
+          "environmentVariables": {
+               "ASPNETCORE_ENVIRONMENT": "Development"
+          }
+     }
   }
 }
