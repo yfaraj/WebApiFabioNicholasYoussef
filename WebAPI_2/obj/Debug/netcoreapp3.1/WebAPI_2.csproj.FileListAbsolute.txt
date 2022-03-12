@@ -22,3 +22,4 @@ C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebAP
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebAPI_2\obj\Debug\netcoreapp3.1\WebAPI_2.genruntimeconfig.cache
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebAPI_2\bin\Debug\netcoreapp3.1\RestSharp.dll
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebAPI_2\bin\Debug\netcoreapp3.1\System.Text.Json.dll
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebAPI_2\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
