@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BUZuJ/nzxSajrqF3pPU+WLDtcJBnIllnYiCL3NZaF58htkOf0Dtrz2pC29UrODVeF6lfvQEJX7DIjJUkZ511bQ==",
+  "dgSpecHash": "hg5fO6yDVzTgMoN5cQ1Rywklevo/WxYCT+7XRbdVHLn29rCM4Q9yGFHhB3scPM7O4KK/GFgQV6xbMXCmchpiIg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Utilisateur\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512"
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\restsharp\\107.3.0\\restsharp.107.3.0.nupkg.sha512",
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
