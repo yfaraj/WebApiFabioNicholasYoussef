@@ -2,10 +2,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.Security;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,11 +23,23 @@ namespace WebAPI_1.Controllers
      {
           private readonly ILogger<WebApiController> _logger;
 
-          static readonly HttpClient client = new HttpClient();
-
           public WebApiController(ILogger<WebApiController> logger)
           {
                _logger = logger;
+          }
+
+          private static bool ServerCertificateCustomValidation(HttpRequestMessage requestMessage, X509Certificate2 certificate, X509Chain chain, SslPolicyErrors sslErrors)
+          {
+               // It is possible inpect the certificate provided by server
+               Console.WriteLine($"Requested URI: {requestMessage.RequestUri}");
+               Console.WriteLine($"Effective date: {certificate.GetEffectiveDateString()}");
+               Console.WriteLine($"Exp date: {certificate.GetExpirationDateString()}");
+               Console.WriteLine($"Issuer: {certificate.Issuer}");
+               Console.WriteLine($"Subject: {certificate.Subject}");
+
+               // Based on the custom logic it is possible to decide whether the client considers certificate valid or not
+               Console.WriteLine($"Errors: {sslErrors}");
+               return sslErrors == SslPolicyErrors.None;
           }
 
           // POST WebAPI/PostFileData
@@ -41,34 +58,56 @@ namespace WebAPI_1.Controllers
                for (int i = 0; i < tcDataArray.Length; i++)
                {
                     string rN = tcDataArray[i].recallNumber;
-                    HttpResponseMessage response = await client.GetAsync("https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/" + rN, CancellationToken.None);
-                    //var s = response.StatusCode;
-                    //response.EnsureSuccessStatusCode();
-                    string responseBody = await response.Content.ReadAsStringAsync();
-                    var v = JsonConvert.DeserializeObject<TC_Data_Online>(responseBody);
 
-                    TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
-                    tC_Data_API_1.recallNumber = tcDataArray[i].recallNumber;
-                    tC_Data_API_1.manufactureName = tcDataArray[i].manufactureName;
-                    tC_Data_API_1.makeName = tcDataArray[i].makeName;
-                    tC_Data_API_1.modelName = tcDataArray[i].modelName;
-                    tC_Data_API_1.recallYear = tcDataArray[i].recallYear;
-                    //tC_Data_API_1.manufacturerRecallNumber = responseBody
-                    tcApiDataList.Add(tC_Data_API_1);
+                    string baseAddress = "https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/2015321";
+                    var client3 = new RestClient(baseAddress);
+                    var request = new RestRequest(baseAddress, Method.Get);
+                    request.AddHeader("Content-Type", "application/json");
+                    var body = @"" + "\n" + @"";
+                    request.AddParameter("application/json", body, ParameterType.RequestBody);
+                    var response = await client3.ExecuteGetAsync(request);
+                    TC_Data_Online tcDataOnline = JsonConvert.DeserializeObject<TC_Data_Online>(response.Content);
+
+                    bool atLeastFoundOne = false;
+                    foreach(var resultSet in tcDataOnline.ResultSet)
+                    {
+                         foreach(var resultSetItem in resultSet)
+                         {
+                              if (resultSetItem.Name == "RECALL_NUMBER_NUM")
+                              {
+                                   if (resultSetItem.Value.Literal == rN)
+                                   {
+                                        TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
+                                        tC_Data_API_1.recallNumber = tcDataArray[i].recallNumber;
+                                        tC_Data_API_1.manufactureName = tcDataArray[i].manufactureName;
+                                        tC_Data_API_1.makeName = tcDataArray[i].makeName;
+                                        tC_Data_API_1.modelName = tcDataArray[i].modelName;
+                                        tC_Data_API_1.recallYear = tcDataArray[i].recallYear;
+                                        tC_Data_API_1.manufacturerRecallNumber = rN;
+                                        tcApiDataList.Add(tC_Data_API_1);
+
+                                        atLeastFoundOne = true;
+                                   }
+                              }
+                         }
+                    }
+                    if (!atLeastFoundOne)
+                    {
+                         TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
+                         tC_Data_API_1.recallNumber = tcDataArray[i].recallNumber;
+                         tC_Data_API_1.manufactureName = tcDataArray[i].manufactureName;
+                         tC_Data_API_1.makeName = tcDataArray[i].makeName;
+                         tC_Data_API_1.modelName = tcDataArray[i].modelName;
+                         tC_Data_API_1.recallYear = tcDataArray[i].recallYear;
+                         tC_Data_API_1.manufacturerRecallNumber = "";
+                         tcApiDataList.Add(tC_Data_API_1);
+                    }
                }
 
+               string json = JsonConvert.SerializeObject(tcApiDataList);
+               System.IO.File.WriteAllText(@"output.json", json);
 
-
-               /*Pseudo Code:
-                * Input_Data = Read_TC_Input_File_JSON_Data(jsonData);
-               foreach (Recall Number)
-               {
-                    Manufacturer_Recall_Number = Call_TC_API(ecall Number);//https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/2016253
-                    Add_To_Input_Data(Manufacturer_Recall_Number);
-               }
-               Save_To_File_1(Input_Data);*/
-
-               return Ok("response");
+               return Ok();
           }
 
           // GET WebAPI/GetFileData
