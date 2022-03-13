@@ -1,15 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "DgKRQPPlnHncUCJTMRQOCzlU+y+AFB3oVo6w9Ci15PJPhsXtzO0tsbrWpXWChBybHsdHQ17iAy+zlWFqmLXvpw==",
+  "dgSpecHash": "Ia/0KzjKrFDTmK3EKoSkwztWnmgTzojRfWEB2j7efLnQtwpYMLl8pbbAjxhWrIfyGGgOOR10jsW5eLWJi2TMeA==",
   "success": true,
   "projectFilePath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
-    "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\restsharp\\107.3.0\\restsharp.107.3.0.nupkg.sha512",
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\obj\\project.nuget.cache : After parsing a value an unexpected character was encountered: \". Path 'expectedPackageFiles[1]', line 9, position 4."
+    }
+  ]
 }
