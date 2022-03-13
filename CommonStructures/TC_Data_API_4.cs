@@ -6,7 +6,7 @@ namespace CommonStructures
      {                  
           public string notificationTypeETXT { get; set; }
           public string notificationTypeFTXT { get; set; }
-
+          
           /*
           API_4_POST(C_InputFile_JSON)
           {
