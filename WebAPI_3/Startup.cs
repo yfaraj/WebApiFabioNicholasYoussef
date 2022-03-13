@@ -26,6 +26,8 @@ namespace WebAPI_3
           {
                services.AddControllers();
 
+               services.AddHttpClient();
+
                services.AddApiVersioning(options =>
                {
                     options.ReportApiVersions = true;
