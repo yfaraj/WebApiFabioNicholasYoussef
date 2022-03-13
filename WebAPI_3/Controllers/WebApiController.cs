@@ -40,10 +40,10 @@ namespace WebAPI_3.Controllers
             if (string.IsNullOrWhiteSpace(jsonData))
             {
                 DataBuilderService.Init(_clientFactory);
-                jsonData = DataBuilderService.LoadPreviousData().Result;
+                jsonData = await DataBuilderService.LoadDataFromPreviousAPIs();
             }
 
-            var tc_Data = JsonConvert.DeserializeObject<TC_Data[]>(jsonData);
+            var tc_Data3 = JsonConvert.DeserializeObject<TC_Data_API_3[]>(jsonData);
 
 
 

@@ -25,7 +25,7 @@ namespace WebAPI_3.Services
             _clientFactory = clientFactory;
         }
 
-        public static async Task<string> LoadPreviousData()
+        public static async Task<string> LoadDataFromPreviousAPIs()
         {
             try
             {
@@ -34,21 +34,20 @@ namespace WebAPI_3.Services
                 var initialJsonFile = File.ReadAllText(fullPath);
 
                 var tc_Data = JsonConvert.DeserializeObject<TC_Data[]>(initialJsonFile);
-                List<TC_Data_API_3> tcApiDataList = new List<TC_Data_API_3>();
+                List<TC_Data_API_2> tcApiDataList = new List<TC_Data_API_2>();
 
                 foreach (var item in tc_Data)
                 {
-                    var vrdDataList = GetVrdData(item.recallNumber).Result.ResultSet.FirstOrDefault();
-                    
+                    var vrdData = await GetVrdData(item.recallNumber);
+                    if (vrdData == null || vrdData.ResultSet.Count == 0)
+                    {
+                        continue;
+                    }
 
-                    //var response = await client.GetAsync("https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/" + item.recallNumber, CancellationToken.None);
-                    //string responseBody = await response.Content.ReadAsStringAsync();
-
-                    //var vrdDataList = JsonConvert.DeserializeObject<TC_Data_Online>(responseBody).ResultSet.FirstOrDefault();
-
-                    var manufacturerRecallNumber = vrdDataList.FirstOrDefault(x => x.Name == Manufacturer_Recall_No_Txt).Value.Literal;
-                    var categoryETXT = vrdDataList.FirstOrDefault(x => x.Name == Category_Etxt).Value.Literal;
-                    var categoryFTXT = vrdDataList.FirstOrDefault(x => x.Name == Category_Ftxt).Value.Literal;
+                    var vrdDataList = vrdData.ResultSet.First();
+                    var manufacturerRecallNumber = vrdDataList.FirstOrDefault(x => x.Name.Equals(Manufacturer_Recall_No_Txt)).Value.Literal;
+                    var categoryETXT = vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Etxt)).Value.Literal;
+                    var categoryFTXT = vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Ftxt)).Value.Literal;
 
 
                     tcApiDataList.Add(new TC_Data_API_3()
@@ -64,25 +63,22 @@ namespace WebAPI_3.Services
                     });
                 }
 
-                return initialJsonFile;
+                var loadedInputJson = JsonConvert.SerializeObject(tcApiDataList);
+
+                return loadedInputJson;
             }
             catch (Exception ex)
             {
-                var xxx = ex.Message;
-                throw;
+                // It can be better done by using proper exception handlers and customized exception if the case.
+                throw new Exception(ex.Message);
             }            
         }
 
         private static async Task<TC_Data_Online> GetVrdData(string recallNumber)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get,
-            "https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/" + recallNumber);
-            
             var client = _clientFactory.CreateClient("VRD");
-            
-            var response = await client.SendAsync(request);
-
-            //var responsex = await client.GetAsync("https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/" + recallNumber, CancellationToken.None);
+            client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
+            var response = await client.GetAsync("https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/" + recallNumber);
             string responseBody = await response.Content.ReadAsStringAsync();
             
             return JsonConvert.DeserializeObject<TC_Data_Online>(responseBody);
