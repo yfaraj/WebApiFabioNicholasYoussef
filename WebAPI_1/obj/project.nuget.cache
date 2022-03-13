@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Ia/0KzjKrFDTmK3EKoSkwztWnmgTzojRfWEB2j7efLnQtwpYMLl8pbbAjxhWrIfyGGgOOR10jsW5eLWJi2TMeA==",
+  "dgSpecHash": "wUXlx+Lot+//loREx4Z6ommuzTCIZ6Ulpue5gQ+hlqGfB2ctVjHCJaqrTRILtaoANFX3lPOn+2Wg39g+jyPSag==",
   "success": true,
   "projectFilePath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj",
   "expectedPackageFiles": [
@@ -9,12 +9,5 @@
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\restsharp\\107.3.0\\restsharp.107.3.0.nupkg.sha512",
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\obj\\project.nuget.cache : After parsing a value an unexpected character was encountered: \". Path 'expectedPackageFiles[1]', line 9, position 4."
-    }
-  ]
+  "logs": []
 }

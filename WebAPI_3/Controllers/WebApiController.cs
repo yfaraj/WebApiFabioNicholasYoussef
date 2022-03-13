@@ -45,7 +45,11 @@ namespace WebAPI_3.Controllers
 
             var outputData = await DataBuilderService.GetSystemTypeData(jsonInput);
 
-            var tc_Data_API_3 = JsonConvert.DeserializeObject<TC_Data_API_3[]>(outputData);
+            var isJsonFileCreated = DataBuilderService.CreateJsonFile(outputData);
+
+            var check = isJsonFileCreated;
+
+            //var tc_Data_API_3 = JsonConvert.DeserializeObject<TC_Data_API_3[]>(outputData);
 
             
 

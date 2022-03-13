@@ -53,12 +53,20 @@ namespace WebAPI_3.Services
             return JsonConvert.SerializeObject(outputData);
         }
 
-            public static async Task<string> LoadDataFromPreviousAPIs()
+        internal static bool CreateJsonFile(string dataJson)
+        {
+            var directory = Directory.GetCurrentDirectory();            
+            File.WriteAllText(directory + "\\InputFromAPI_3.json", dataJson);
+
+            return true;
+        }
+
+        public static async Task<string> LoadDataFromPreviousAPIs()
         {
             try
             {
-                string solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string fullPath = solutionDir + InitialFile_Path;
+                var solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                var fullPath = solutionDir + InitialFile_Path;
                 var initialJsonFile = File.ReadAllText(fullPath);
 
                 var tc_Data = JsonConvert.DeserializeObject<TC_Data[]>(initialJsonFile);

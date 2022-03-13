@@ -48,3 +48,4 @@ C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebAPI_3\bin\Debug\netcoreapp3.1\CSCompV
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebAPI_3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebAPI_3\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebAPI_3\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebAPI_3\bin\Debug\netcoreapp3.1\InputFromAPI_3.json
