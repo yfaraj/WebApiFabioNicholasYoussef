@@ -4,14 +4,14 @@
     "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj": {}
   },
   "projects": {
-    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj": {
+    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
-        "projectName": "WebAPI_3",
-        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
+        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
+        "projectName": "CommonStructures",
+        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
         "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
-        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\obj\\",
+        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,7 +40,73 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
+        "projectName": "WebAPI_3",
+        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
+        "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
+        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
+                "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNetCore.Mvc.Versioning": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -48,10 +114,6 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
-            },
-            "RestSharp": {
-              "target": "Package",
-              "version": "[107.3.0, )"
             }
           },
           "imports": [
