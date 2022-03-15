@@ -41,7 +41,7 @@ namespace WebAPI_3.Services
                     continue;
                 }
 
-                var vrdDataList = vrdData.ResultSet.First();
+                var vrdDataList = vrdData.ResultSet.FirstOrDefault();
                 var sytemTypeEtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Etxt)).Value.Literal;
                 var sytemTypeFtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Ftxt)).Value.Literal;
                 item.systemTypeETXT = sytemTypeEtxt;
@@ -53,10 +53,10 @@ namespace WebAPI_3.Services
             return JsonConvert.SerializeObject(outputData);
         }
 
-        internal static bool CreateJsonFile(string dataJson)
+        internal static bool CreateJsonFile(string completeDataJson)
         {
             var directory = Directory.GetCurrentDirectory();            
-            File.WriteAllText(directory + "\\InputFromAPI_3.json", dataJson);
+            File.WriteAllText(directory + "\\InputFromAPI_3.json", completeDataJson);
 
             return true;
         }
