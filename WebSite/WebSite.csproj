@@ -2,10 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	 <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Net.Http.Json" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CommonStructures\CommonStructures.csproj" />
+    <ProjectReference Include="..\WebAPI_1\WebAPI_1.csproj" />
+    <ProjectReference Include="..\WebAPI_2\WebAPI_2.csproj" />
+    <ProjectReference Include="..\WebAPI_3\WebAPI_3.csproj" />
+    <ProjectReference Include="..\WebAPI_4\WebAPI_4.csproj" />
   </ItemGroup>
 
 </Project>

@@ -118,7 +118,7 @@ namespace WebAPI_3.Services
 
                 foreach (var item in tc_Data)
                 {
-                    var vrdData = await GetVrdData(item.recallNumber);
+                    var vrdData = await GetVrdData(item.RecallNumber);
                     if (vrdData == null || vrdData.ResultSet.Count == 0)
                     {
                         continue;
@@ -132,7 +132,7 @@ namespace WebAPI_3.Services
 
                     tcApiDataList.Add(new TC_Data_API_2()
                     {
-                        RecallNumber = item.recallNumber,
+                        RecallNumber = item.RecallNumber,
                         ManufactureName = item.ManufactureName,
                         MakeName = item.MakeName,
                         ModelName = item.ModelName,

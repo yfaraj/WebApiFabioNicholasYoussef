@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebSite.Data;
+using WebSite.Services;
 
 namespace WebSite
 {
@@ -28,6 +29,10 @@ namespace WebSite
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            services.AddHttpClient<IWebApi3Service, WebApi3Service>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:5003/");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
