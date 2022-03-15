@@ -133,10 +133,10 @@ namespace WebAPI_3.Services
                     tcApiDataList.Add(new TC_Data_API_2()
                     {
                         RecallNumber = item.recallNumber,
-                        ManufactureName = item.manufactureName,
-                        MakeName = item.makeName,
-                        ModelName = item.modelName,
-                        RecallYear = item.recallYear,
+                        ManufactureName = item.ManufactureName,
+                        MakeName = item.MakeName,
+                        ModelName = item.ModelName,
+                        RecallYear = item.RecallYear,
                         ManufacturerRecallNumber = manufacturerRecallNumber,
                         CategoryETXT = categoryETXT,
                         CategoryFTXT = categoryFTXT

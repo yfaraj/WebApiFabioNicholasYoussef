@@ -79,10 +79,10 @@ namespace WebAPI_1.Controllers
                                    {
                                         TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
                                         tC_Data_API_1.RecallNumber = tcDataArray[i].recallNumber;
-                                        tC_Data_API_1.ManufactureName = tcDataArray[i].manufactureName;
-                                        tC_Data_API_1.MakeName = tcDataArray[i].makeName;
-                                        tC_Data_API_1.ModelName = tcDataArray[i].modelName;
-                                        tC_Data_API_1.RecallYear = tcDataArray[i].recallYear;
+                                        tC_Data_API_1.ManufactureName = tcDataArray[i].ManufactureName;
+                                        tC_Data_API_1.MakeName = tcDataArray[i].MakeName;
+                                        tC_Data_API_1.ModelName = tcDataArray[i].ModelName;
+                                        tC_Data_API_1.RecallYear = tcDataArray[i].RecallYear;
                                         tC_Data_API_1.ManufacturerRecallNumber = rN;
                                         tcApiDataList.Add(tC_Data_API_1);
 
@@ -95,10 +95,10 @@ namespace WebAPI_1.Controllers
                     {
                          TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
                          tC_Data_API_1.RecallNumber = tcDataArray[i].recallNumber;
-                         tC_Data_API_1.ManufactureName = tcDataArray[i].manufactureName;
-                         tC_Data_API_1.MakeName = tcDataArray[i].makeName;
-                         tC_Data_API_1.ModelName = tcDataArray[i].modelName;
-                         tC_Data_API_1.RecallYear = tcDataArray[i].recallYear;
+                         tC_Data_API_1.ManufactureName = tcDataArray[i].ManufactureName;
+                         tC_Data_API_1.MakeName = tcDataArray[i].MakeName;
+                         tC_Data_API_1.ModelName = tcDataArray[i].ModelName;
+                         tC_Data_API_1.RecallYear = tcDataArray[i].RecallYear;
                          tC_Data_API_1.ManufacturerRecallNumber = "";
                          tcApiDataList.Add(tC_Data_API_1);
                     }
