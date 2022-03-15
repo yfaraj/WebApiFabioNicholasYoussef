@@ -1,17 +1,13 @@
-﻿using CommonStructures;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using WebAPI_3.Services;
 
 namespace WebAPI_3.Controllers
 {
-     [Route("WebAPI/v{version:apiVersion}")]
+    [Route("WebAPI/v{version:apiVersion}")]
      [ApiController]
      [ApiVersion("1.0")]
      public class WebApiController : ControllerBase
@@ -38,6 +34,13 @@ namespace WebAPI_3.Controllers
         [Consumes("application/json")]
         public async Task<IActionResult> PostFileData([FromBody] string jsonInput)
         {
+            await ProcessInputData(jsonInput);
+
+            return Ok("Updated file created successfully.");
+        }
+
+        private async Task ProcessInputData(string jsonInput)
+        {
             if (string.IsNullOrWhiteSpace(jsonInput))
             {
                 jsonInput = await DataBuilderService.LoadDataFromPreviousAPIs();
@@ -45,24 +48,7 @@ namespace WebAPI_3.Controllers
 
             var outputData = await DataBuilderService.GetSystemTypeData(jsonInput);
 
-            var isJsonFileCreated = DataBuilderService.CreateJsonFile(outputData);
-
-            var check = isJsonFileCreated;
-
-            //var tc_Data_API_3 = JsonConvert.DeserializeObject<TC_Data_API_3[]>(outputData);
-
-            
-
-            /*Pseudo Code:
-            * Input_Data = Read_TC_Input_File_JSON_Data(jsonData);
-            foreach (Recall Number)
-            {
-                System_Type = Call_TC_API(ecall Number);//https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/2016253
-                Add_To_Input_Data(System_Type);
-            }
-            Save_To_File_1(Input_Data);*/
-
-            return Ok(jsonInput);
+            DataBuilderService.CreateJsonFile(outputData);
         }
 
         // GET WebAPI/GetFileData
@@ -76,14 +62,18 @@ namespace WebAPI_3.Controllers
         [Consumes("application/json")]
         public async Task<IActionResult> GetFileData()
         {
-            string jsonFileData = "";
-            var file = await PostFileData(null);
+            //await PostFileData("");
 
-            /*Pseudo Code:
-            * jsonFileData = Read_TC_Output_File_JSON_Data();
-            */
+            var filePath = Directory.GetCurrentDirectory() + "\\InputFromAPI_3.json";
 
-            return Ok(jsonFileData);
+            if (!System.IO.File.Exists(filePath))
+            {
+                return BadRequest("The data is missing or broken. Please run the PostFileData funtion in order to get the data ready.");
+            }
+
+            var inputFromApi3 = System.IO.File.ReadAllText(filePath);
+
+            return Ok(inputFromApi3);
         }
 
         // GET WebAPI/Search
@@ -98,21 +88,14 @@ namespace WebAPI_3.Controllers
         [Consumes("application/json")]
         public async Task<IActionResult> Search(string systemType)
         {
-            string resultJsonData = "";
+            var inputFromApi3 = DataBuilderService.GetDataBySystemType(systemType).Result;
 
-            /*Pseudo Code:
-            *   jsonFileData = Read_TC_Output_File_JSON_Data();
-            *   
-            *   foreach(API_Object_Data in jsonFileData)
-	            {
-		            if ((API_Object_Data.SYSTEM_TYPE_ETXT == systemType) || (API_Object_Data.SYSTEM_TYPE_FTXT == systemType))
-		            {
-			            resultJsonData.Add(API_Object_Data);
-		            }
-	            }
-            */
+            if (inputFromApi3 == string.Empty)
+            {
+                return BadRequest("Sytem type not found.");
+            }
 
-            return Ok(resultJsonData);
+            return Ok(inputFromApi3);
         }
      }
 }

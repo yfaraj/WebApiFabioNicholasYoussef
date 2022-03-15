@@ -28,36 +28,81 @@ namespace WebAPI_3.Services
 
         public static async Task<string> GetSystemTypeData(string inputJson)
         {
-            var inputData = JsonConvert.DeserializeObject<TC_Data_API_3[]>(inputJson).ToList();
-            var outputData = new List<TC_Data_API_3>();
-
-            foreach (var item in inputData)
+            try
             {
-                var vrdData = await GetVrdData(item.RecallNumber);
-                
-                if (vrdData == null || vrdData.ResultSet.Count == 0)
+                var inputData = JsonConvert.DeserializeObject<TC_Data_API_3[]>(inputJson).ToList();
+                var outputData = new List<TC_Data_API_3>();
+
+                foreach (var item in inputData)
                 {
-                    continue;
+                    var vrdData = await GetVrdData(item.RecallNumber);
+
+                    if (vrdData == null || vrdData.ResultSet.Count == 0)
+                    {
+                        continue;
+                    }
+
+                    var vrdDataList = vrdData.ResultSet.FirstOrDefault();
+                    var sytemTypeEtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Etxt)).Value.Literal;
+                    var sytemTypeFtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Ftxt)).Value.Literal;
+                    item.SystemTypeETXT = sytemTypeEtxt;
+                    item.SystemTypeFTXT = sytemTypeFtxt;
+
+                    // Quick check for missing values
+                    // Add value if missing
+                    item.ManufacturerRecallNumber = string.IsNullOrWhiteSpace(item.ManufacturerRecallNumber) ?
+                        vrdDataList.FirstOrDefault(x => x.Name.Equals(Manufacturer_Recall_No_Txt)).Value.Literal :
+                        item.ManufacturerRecallNumber;
+                    item.CategoryETXT = string.IsNullOrWhiteSpace(item.ManufacturerRecallNumber) ?
+                        vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Etxt)).Value.Literal :
+                        item.CategoryETXT;
+                    item.CategoryFTXT = string.IsNullOrWhiteSpace(item.ManufacturerRecallNumber) ?
+                        vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Ftxt)).Value.Literal :
+                        item.CategoryFTXT;
+
+
+                    outputData.Add(item);
                 }
 
-                var vrdDataList = vrdData.ResultSet.FirstOrDefault();
-                var sytemTypeEtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Etxt)).Value.Literal;
-                var sytemTypeFtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Ftxt)).Value.Literal;
-                item.SystemTypeETXT = sytemTypeEtxt;
-                item.SystemTypeFTXT = sytemTypeFtxt;
-
-                outputData.Add(item);
+                return JsonConvert.SerializeObject(outputData);
             }
-
-            return JsonConvert.SerializeObject(outputData);
+            catch (Exception ex)
+            {
+                // It can be better done by using proper exception handlers and customized exception if the case.
+                throw new Exception(ex.Message);
+            }
         }
 
-        internal static bool CreateJsonFile(string completeDataJson)
+        public static void CreateJsonFile(string completeDataJson)
         {
-            var directory = Directory.GetCurrentDirectory();            
+            // Saving data to the API 3 folder.
+            // It's better to have the path being added to appsettings
+            var directory = Directory.GetCurrentDirectory();
             File.WriteAllText(directory + "\\InputFromAPI_3.json", completeDataJson);
+        }
 
-            return true;
+        public static async Task<string> GetDataBySystemType(string systemType)
+        {
+            try
+            {
+                var filePath = Directory.GetCurrentDirectory() + "\\InputFromAPI_3.json";
+
+                if (string.IsNullOrWhiteSpace(systemType) || !File.Exists(filePath))
+                {
+                    return string.Empty;
+                }
+
+                var fileData = File.ReadAllTextAsync(filePath).Result;
+                var deserializeData = JsonConvert.DeserializeObject<List<TC_Data_API_3>>(fileData);
+                var selection = deserializeData.Where(x => x.SystemTypeETXT == systemType || x.SystemTypeFTXT == systemType).ToList();
+
+                return JsonConvert.SerializeObject(selection);
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
         }
 
         public static async Task<string> LoadDataFromPreviousAPIs()
