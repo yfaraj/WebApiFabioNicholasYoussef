@@ -19,22 +19,58 @@ namespace WebAPI_3.Services
         private const string Manufacturer_Recall_No_Txt = "MANUFACTURER_RECALL_NO_TXT";
         private const string Category_Etxt = "CATEGORY_ETXT";
         private const string Category_Ftxt = "CATEGORY_FTXT";
+        private const string System_Type_Etxt = "SYSTEM_TYPE_ETXT";
+        private const string System_Type_Ftxt = "SYSTEM_TYPE_FTXT";
 
         public static void Init(IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
         }
 
+        public static async Task<string> GetSystemTypeData(string inputJson)
+        {
+            var inputData = JsonConvert.DeserializeObject<TC_Data_API_3[]>(inputJson).ToList();
+            var outputData = new List<TC_Data_API_3>();
+
+            foreach (var item in inputData)
+            {
+                var vrdData = await GetVrdData(item.recallNumber);
+                
+                if (vrdData == null || vrdData.ResultSet.Count == 0)
+                {
+                    continue;
+                }
+
+                var vrdDataList = vrdData.ResultSet.FirstOrDefault();
+                var sytemTypeEtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Etxt)).Value.Literal;
+                var sytemTypeFtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Ftxt)).Value.Literal;
+                item.systemTypeETXT = sytemTypeEtxt;
+                item.systemTypeFTXT = sytemTypeFtxt;
+
+                outputData.Add(item);
+            }
+
+            return JsonConvert.SerializeObject(outputData);
+        }
+
+        internal static bool CreateJsonFile(string completeDataJson)
+        {
+            var directory = Directory.GetCurrentDirectory();            
+            File.WriteAllText(directory + "\\InputFromAPI_3.json", completeDataJson);
+
+            return true;
+        }
+
         public static async Task<string> LoadDataFromPreviousAPIs()
         {
             try
             {
-                string solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                string fullPath = solutionDir + InitialFile_Path;
+                var solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+                var fullPath = solutionDir + InitialFile_Path;
                 var initialJsonFile = File.ReadAllText(fullPath);
 
                 var tc_Data = JsonConvert.DeserializeObject<TC_Data[]>(initialJsonFile);
-                List<TC_Data_API_2> tcApiDataList = new List<TC_Data_API_2>();
+                var tcApiDataList = new List<TC_Data_API_2>();
 
                 foreach (var item in tc_Data)
                 {
@@ -50,7 +86,7 @@ namespace WebAPI_3.Services
                     var categoryFTXT = vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Ftxt)).Value.Literal;
 
 
-                    tcApiDataList.Add(new TC_Data_API_3()
+                    tcApiDataList.Add(new TC_Data_API_2()
                     {
                         recallNumber = item.recallNumber,
                         manufactureName = item.manufactureName,

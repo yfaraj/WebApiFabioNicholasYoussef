@@ -23,6 +23,7 @@ namespace WebAPI_3.Controllers
         {
             _logger = logger;
             _clientFactory = clientFactory;
+            DataBuilderService.Init(_clientFactory);
         }
 
         // POST WebAPI/PostFileData
@@ -30,22 +31,27 @@ namespace WebAPI_3.Controllers
         /// Post a JSON file data
         /// </summary>
         /// <remarks>This Web API posts file data and manipulates it</remarks>
-        /// <param name="jsonData">JSON file data</param>
+        /// <param name="jsonInput">JSON file data</param>
         /// <returns></returns>
         [HttpPost]
         [Route("PostFileData")]
         [Consumes("application/json")]
-        public async Task<IActionResult> PostFileData([FromBody] string jsonData)
+        public async Task<IActionResult> PostFileData([FromBody] string jsonInput)
         {
-            if (string.IsNullOrWhiteSpace(jsonData))
+            if (string.IsNullOrWhiteSpace(jsonInput))
             {
-                DataBuilderService.Init(_clientFactory);
-                jsonData = await DataBuilderService.LoadDataFromPreviousAPIs();
+                jsonInput = await DataBuilderService.LoadDataFromPreviousAPIs();
             }
 
-            var tc_Data3 = JsonConvert.DeserializeObject<TC_Data_API_3[]>(jsonData);
+            var outputData = await DataBuilderService.GetSystemTypeData(jsonInput);
 
+            var isJsonFileCreated = DataBuilderService.CreateJsonFile(outputData);
 
+            var check = isJsonFileCreated;
+
+            //var tc_Data_API_3 = JsonConvert.DeserializeObject<TC_Data_API_3[]>(outputData);
+
+            
 
             /*Pseudo Code:
             * Input_Data = Read_TC_Input_File_JSON_Data(jsonData);
@@ -56,7 +62,7 @@ namespace WebAPI_3.Controllers
             }
             Save_To_File_1(Input_Data);*/
 
-            return Ok(jsonData);
+            return Ok(jsonInput);
         }
 
         // GET WebAPI/GetFileData
