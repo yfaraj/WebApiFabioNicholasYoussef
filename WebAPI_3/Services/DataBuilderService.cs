@@ -5,16 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
-using System.Net.Security;
-using System.Security.Cryptography.X509Certificates;
 
 namespace WebAPI_3.Services
 {
     public static class DataBuilderService
     {
         private static IHttpClientFactory _clientFactory;
+        
+        // TODO Fabio: Move this to appsettings
         private const string InitialFile_Path = "\\WebApiFabioNicholasYoussef\\CommonStructures\\CSCompVehicleRecallStart.json";
         private const string Manufacturer_Recall_No_Txt = "MANUFACTURER_RECALL_NO_TXT";
         private const string Category_Etxt = "CATEGORY_ETXT";
@@ -34,7 +33,7 @@ namespace WebAPI_3.Services
 
             foreach (var item in inputData)
             {
-                var vrdData = await GetVrdData(item.recallNumber);
+                var vrdData = await GetVrdData(item.RecallNumber);
                 
                 if (vrdData == null || vrdData.ResultSet.Count == 0)
                 {
@@ -44,8 +43,8 @@ namespace WebAPI_3.Services
                 var vrdDataList = vrdData.ResultSet.FirstOrDefault();
                 var sytemTypeEtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Etxt)).Value.Literal;
                 var sytemTypeFtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(System_Type_Ftxt)).Value.Literal;
-                item.systemTypeETXT = sytemTypeEtxt;
-                item.systemTypeFTXT = sytemTypeFtxt;
+                item.SystemTypeETXT = sytemTypeEtxt;
+                item.SystemTypeFTXT = sytemTypeFtxt;
 
                 outputData.Add(item);
             }
@@ -88,14 +87,14 @@ namespace WebAPI_3.Services
 
                     tcApiDataList.Add(new TC_Data_API_2()
                     {
-                        recallNumber = item.recallNumber,
-                        manufactureName = item.manufactureName,
-                        makeName = item.makeName,
-                        modelName = item.modelName,
-                        recallYear = item.recallYear,
-                        manufacturerRecallNumber = manufacturerRecallNumber,
-                        categoryETXT = categoryETXT,
-                        categoryFTXT = categoryFTXT
+                        RecallNumber = item.recallNumber,
+                        ManufactureName = item.manufactureName,
+                        MakeName = item.makeName,
+                        ModelName = item.modelName,
+                        RecallYear = item.recallYear,
+                        ManufacturerRecallNumber = manufacturerRecallNumber,
+                        CategoryETXT = categoryETXT,
+                        CategoryFTXT = categoryFTXT
                     });
                 }
 
