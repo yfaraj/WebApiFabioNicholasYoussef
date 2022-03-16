@@ -160,7 +160,7 @@ namespace WebAPI_1.Controllers
                var json = JsonConvert.DeserializeObject<List<TC_Data_API_1>>(jsonFileData);
                foreach(TC_Data_API_1 tcDataAPI1 in json)
                {
-                    if(tcDataAPI1.ManufactureName == manufacturerRecallNumber)
+                    if(tcDataAPI1.ManufacturerRecallNumber == manufacturerRecallNumber)
                     {
                          result.Add(tcDataAPI1);
                     }
