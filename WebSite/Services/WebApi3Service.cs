@@ -35,7 +35,7 @@ namespace WebSite.Services
             }
         }
 
-        public Task<string> PostData()
+        public async Task<string> PostData()
         {
             try
             {
@@ -54,6 +54,18 @@ namespace WebSite.Services
         public Task<IEnumerable<TC_Data>> Search()
         {
             throw new System.NotImplementedException();
+        }
+
+        private async Task<string> GetJsonString()
+        {
+            var fullFilePath = Directory.GetCurrentDirectory() + File_Path;
+            if (!File.Exists(fullFilePath))
+            {
+                throw new Exception("Initial input file not found. Please upload the file first.");
+            }
+            var jsonData = File.ReadAllText(fullFilePath);
+
+            return jsonData;
         }
     }
 }
