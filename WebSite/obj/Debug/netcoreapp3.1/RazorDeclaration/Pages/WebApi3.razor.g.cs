@@ -156,26 +156,26 @@ using System.IO;
 
     async Task PostData()
     {
-        postDataResponse = await _webApi1Service.PostData();
+        postDataResponse = await _webApi3Service.PostData();
     }
 
     private IEnumerable<TC_Data> TC_Data = null;
 
     async Task LoadData()
     {
-        TC_Data = await _webApi1Service.LoadData();        
+        TC_Data = await _webApi3Service.LoadData();        
     }
     //protected override async Task OnInitializedAsync()
     //{
     //    await base.OnInitializedAsync();
-    //    TC_Data = await _webApi1Service.LoadData();
+    //    TC_Data = await _webApi3Service.LoadData();
     //}
 
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload fileUpload { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi3Service _webApi1Service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi3Service _webApi3Service { get; set; }
     }
 }
 #pragma warning restore 1591
