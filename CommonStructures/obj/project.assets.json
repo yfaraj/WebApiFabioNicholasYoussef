@@ -48,19 +48,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\": {}
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
+      "projectUniqueName": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
       "projectName": "CommonStructures",
-      "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
-      "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
-      "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\obj\\",
+      "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
+      "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -68,8 +73,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
