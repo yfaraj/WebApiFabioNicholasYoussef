@@ -199,3 +199,4 @@ C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSi
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\WebSite.dll
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\WebSite.pdb
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\WebSite.genruntimeconfig.cache
+C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\Pages\WebApi3.razor.g.cs
