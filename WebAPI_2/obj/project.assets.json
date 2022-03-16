@@ -43,6 +43,22 @@
         "runtime": {
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
+      },
+      "CommonStructures/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "bin/placeholder/CommonStructures.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CommonStructures.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -132,10 +148,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "CommonStructures/1.0.0": {
+      "type": "project",
+      "path": "../CommonStructures/CommonStructures.csproj",
+      "msbuildProject": "../CommonStructures/CommonStructures.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CommonStructures >= 1.0.0",
       "Microsoft.AspNetCore.Mvc.Versioning >= 5.0.0",
       "Newtonsoft.Json >= 13.0.1",
       "RestSharp >= 107.3.0"
@@ -172,7 +194,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
+              "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

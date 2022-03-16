@@ -177,7 +177,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
+                "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

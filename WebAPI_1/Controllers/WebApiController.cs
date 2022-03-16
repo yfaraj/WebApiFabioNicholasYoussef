@@ -28,20 +28,6 @@ namespace WebAPI_1.Controllers
                _logger = logger;
           }
 
-          private static bool ServerCertificateCustomValidation(HttpRequestMessage requestMessage, X509Certificate2 certificate, X509Chain chain, SslPolicyErrors sslErrors)
-          {
-               // It is possible inpect the certificate provided by server
-               Console.WriteLine($"Requested URI: {requestMessage.RequestUri}");
-               Console.WriteLine($"Effective date: {certificate.GetEffectiveDateString()}");
-               Console.WriteLine($"Exp date: {certificate.GetExpirationDateString()}");
-               Console.WriteLine($"Issuer: {certificate.Issuer}");
-               Console.WriteLine($"Subject: {certificate.Subject}");
-
-               // Based on the custom logic it is possible to decide whether the client considers certificate valid or not
-               Console.WriteLine($"Errors: {sslErrors}");
-               return sslErrors == SslPolicyErrors.None;
-          }
-
           // POST WebAPI/PostFileData
           /// <summary>
           /// Post a JSON file data
@@ -69,29 +55,55 @@ namespace WebAPI_1.Controllers
                     TC_Data_Online tcDataOnline = JsonConvert.DeserializeObject<TC_Data_Online>(response.Content);
 
                     bool atLeastFoundOne = false;
-                    foreach(var resultSet in tcDataOnline.ResultSet)
+                    int maxYear = 0;
+                    string manufacturerRecallNumber = "";
+                    foreach (var resultSet in tcDataOnline.ResultSet)
                     {
-                         foreach(var resultSetItem in resultSet)
+                         bool recallNumberNumFound = false;
+                         int year = 0;
+                         string currentManufacturerRecallNumber = "";
+                         foreach (var resultSetItem in resultSet)
                          {
                               if (resultSetItem.Name == "RECALL_NUMBER_NUM")
                               {
                                    if (resultSetItem.Value.Literal == rN)
                                    {
-                                        TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
-                                        tC_Data_API_1.RecallNumber = tcDataArray[i].RecallNumber;
-                                        tC_Data_API_1.ManufactureName = tcDataArray[i].ManufactureName;
-                                        tC_Data_API_1.MakeName = tcDataArray[i].MakeName;
-                                        tC_Data_API_1.ModelName = tcDataArray[i].ModelName;
-                                        tC_Data_API_1.RecallYear = tcDataArray[i].RecallYear;
-                                        tC_Data_API_1.ManufacturerRecallNumber = rN;
-                                        tcApiDataList.Add(tC_Data_API_1);
-
-                                        atLeastFoundOne = true;
+                                        atLeastFoundOne = recallNumberNumFound = true;
+                                   }
+                              }
+                              if (resultSetItem.Name == "MANUFACTURER_RECALL_NO_TXT")
+                              {
+                                   currentManufacturerRecallNumber = resultSetItem.Value.Literal;
+                              }
+                              if (resultSetItem.Name == "DATE_YEAR_CD")
+                              {
+                                   Int32.TryParse(resultSetItem.Value.Literal, out year);
+                              }
+                         }
+                         if (recallNumberNumFound)
+                         {
+                              if (year != 0)
+                              {
+                                   if (year > maxYear)
+                                   {
+                                        maxYear = year;
+                                        manufacturerRecallNumber = currentManufacturerRecallNumber;
                                    }
                               }
                          }
                     }
-                    if (!atLeastFoundOne)
+                    if (atLeastFoundOne)
+                    {
+                         TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
+                         tC_Data_API_1.RecallNumber = tcDataArray[i].RecallNumber;
+                         tC_Data_API_1.ManufactureName = tcDataArray[i].ManufactureName;
+                         tC_Data_API_1.MakeName = tcDataArray[i].MakeName;
+                         tC_Data_API_1.ModelName = tcDataArray[i].ModelName;
+                         tC_Data_API_1.RecallYear = tcDataArray[i].RecallYear;
+                         tC_Data_API_1.ManufacturerRecallNumber = manufacturerRecallNumber;
+                         tcApiDataList.Add(tC_Data_API_1);
+                    }
+                    else
                     {
                          TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
                          tC_Data_API_1.RecallNumber = tcDataArray[i].RecallNumber;
@@ -123,11 +135,10 @@ namespace WebAPI_1.Controllers
           {
                string jsonFileData = "";
 
-               /*Pseudo Code:
-                * jsonFileData = Read_TC_Output_File_JSON_Data();
-                */
+               jsonFileData = System.IO.File.ReadAllText(@"output.json");
+               var json = JsonConvert.DeserializeObject<List<TC_Data_API_1>>(jsonFileData);
 
-               return Ok(jsonFileData);
+               return Ok(json);
           }
 
           // GET WebAPI/Search
@@ -140,23 +151,28 @@ namespace WebAPI_1.Controllers
           [HttpGet]
           [Route("Search")]
           [Consumes("application/json")]
-          public async Task<IActionResult> Search(int manufacturerRecallNumber)
+          public async Task<IActionResult> Search(string manufacturerRecallNumber)
           {
-               string resultJsonData = "";
+               string jsonFileData = "";
+               List<TC_Data_API_1> result = new List<TC_Data_API_1>();
 
-               /*Pseudo Code:
-                *   jsonFileData = Read_TC_Output_File_JSON_Data();
-                *   
-                *   foreach(API_Object_Data in jsonFileData)
-	               {
-		               if (API_Object_Data.Manufacturer_Recall_Number == manufacturerRecallNumber)
-		               {
-			               resultJsonData.Add(API_Object_Data);
-		               }
-	               }
-                */
-
-               return Ok(resultJsonData);
+               jsonFileData = System.IO.File.ReadAllText(@"output.json");
+               var json = JsonConvert.DeserializeObject<List<TC_Data_API_1>>(jsonFileData);
+               foreach(TC_Data_API_1 tcDataAPI1 in json)
+               {
+                    if(tcDataAPI1.ManufactureName == manufacturerRecallNumber)
+                    {
+                         result.Add(tcDataAPI1);
+                    }
+               }
+               if (result.Count() > 0)
+               {
+                    return Ok(result);
+               }
+               else
+               {
+                    return NotFound();
+               }
           }
      }
 }

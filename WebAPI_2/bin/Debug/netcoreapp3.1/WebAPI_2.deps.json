@@ -31,6 +31,7 @@
     ".NETCoreApp,Version=v3.1": {
       "WebAPI_2/1.0.0": {
         "dependencies": {
+          "CommonStructures": "1.0.0",
           "Microsoft.AspNetCore.Mvc.Versioning": "5.0.0",
           "Newtonsoft.Json": "13.0.1",
           "RestSharp": "107.3.0",
@@ -368,6 +369,17 @@
         },
         "compile": {
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
+        }
+      },
+      "CommonStructures/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "CommonStructures.dll": {}
+        },
+        "compile": {
+          "CommonStructures.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2091,6 +2103,11 @@
       "sha512": "sha512-+luxMQNZ2WqeffBU7Ml6njIvxc8169NW2oU+ygNudXQGZiarjE7DOtN7bILiQjTZjkmwwRZGTtLzmdrSI/Ustw==",
       "path": "system.text.json/5.0.0",
       "hashPath": "system.text.json.5.0.0.nupkg.sha512"
+    },
+    "CommonStructures/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",
