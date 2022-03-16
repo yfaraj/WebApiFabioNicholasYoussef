@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "YdcyvuMUZdrxZ71wutE1NmzLjA0nUtKyRRtkYdZR/SdcZ/C5srCzffvz/YffXdBzo7aGfAGH8DsaBBje83Z8aQ==",
+  "dgSpecHash": "hCCqv4Ikhly823g/C9F3FS3r6FVvDIq7p8uTsT5N3gyunfRiAPth1DvS8YtnEDDEuCDiz3bQ9B0vQMOvP4hK/g==",
   "success": true,
   "projectFilePath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.0.0\\microsoft.aspnetcore.mvc.versioning.5.0.0.nupkg.sha512",
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\restsharp\\107.3.0\\restsharp.107.3.0.nupkg.sha512",
-    "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
+    "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512",
+    "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
   ],
   "logs": []
 }

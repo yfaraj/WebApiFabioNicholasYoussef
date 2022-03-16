@@ -23,3 +23,4 @@ C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.RazorTargetAssemblyInfo.cache
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.dll
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.pdb
+C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.csproj.AssemblyReference.cache
