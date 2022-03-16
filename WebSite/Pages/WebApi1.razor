@@ -1,13 +1,33 @@
-﻿@page "/loaddata"
-@inject IWebApi3Service _api3Service;
+﻿@page "/webapi1"
+@inject IWebApi1Service _webApi1Service;
+@inject IFileUpload fileUpload;
 
+<h3>Initial TC File Input</h3>
+<InputFile OnChange="HandleFileSelected"></InputFile>
+
+@if (file != null)
+{
+    <p>Name: @file.Name</p>
+    <p>Size in Bytes: @file.Size</p>
+    <p>File type: @file.Type</p>
+}
 @code {
+    IFileListEntry file;
+    async Task HandleFileSelected(IFileListEntry[] files)
+    {
+        file = files.FirstOrDefault();
+        if (file != null)
+        {
+            await fileUpload.UploadAsync(file);
+        }
+    }
+
     private IEnumerable<TC_Data> TC_Data = null;
 
     protected override async Task OnInitializedAsync()
     {
         await base.OnInitializedAsync();
-        TC_Data = await _api3Service.LoadData();
+        TC_Data = await _webApi1Service.LoadData();
     }
 }
 

@@ -63,14 +63,70 @@ using Microsoft.JSInterop;
 #nullable disable
 #nullable restore
 #line 8 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
-using WebSite;
+using BlazorInputFile;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 9 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
+using WebSite;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 10 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
 using WebSite.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
+using WebSite.Services;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
+using CommonStructures;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 13 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
+using WebAPI_1;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 14 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
+using WebAPI_2;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 15 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
+using WebAPI_3;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 16 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
+using WebAPI_4;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 17 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\_Imports.razor"
+using System.IO;
 
 #line default
 #line hidden

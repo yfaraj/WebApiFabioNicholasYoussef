@@ -8,12 +8,12 @@ using Newtonsoft.Json;
 
 namespace WebSite.Services
 {
-    public class WebApi3Service : IWebApi3Service
+    public class WebApi1Service : IWebApi1Service
     {
         private readonly HttpClient _httpClient;
-        private const string File_Path = "\\WebApiFabioNicholasYoussef\\CommonStructures\\TC_Data.json";
+        private const string File_Path = "\\Upload\\" + "InitialInputData.json";
 
-        public WebApi3Service(HttpClient httpClient)
+        public WebApi1Service(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
@@ -22,8 +22,12 @@ namespace WebSite.Services
         {
             try
             {
-                var solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-                var jsonData = File.ReadAllText(solutionDir + File_Path);
+                var fullFilePath = Directory.GetCurrentDirectory() + File_Path;
+                if (!File.Exists(fullFilePath))
+                {
+                    throw new Exception("Initial input file not found. Please upload the file first");
+                }
+                var jsonData = File.ReadAllText(fullFilePath);
                 var resultData = JsonConvert.DeserializeObject<TC_Data[]>(jsonData);
 
                 return resultData;

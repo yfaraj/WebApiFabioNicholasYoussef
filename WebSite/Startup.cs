@@ -33,6 +33,7 @@ namespace WebSite
             {
                 client.BaseAddress = new Uri("https://localhost:5003/");
             });
+            services.AddScoped<IFileUpload, IFileUpload>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

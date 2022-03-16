@@ -68,7 +68,7 @@ namespace WebAPI_3.Services
             }
             catch (Exception ex)
             {
-                // It can be better done by using proper exception handlers and customized exception if the case.
+                // It can be better done by using proper exception handlers and customized exception.
                 throw new Exception(ex.Message);
             }
         }
@@ -85,22 +85,23 @@ namespace WebAPI_3.Services
         {
             try
             {
+                var selection = new List<TC_Data_API_3>();
                 var filePath = Directory.GetCurrentDirectory() + "\\InputFromAPI_3.json";
 
                 if (string.IsNullOrWhiteSpace(systemType) || !File.Exists(filePath))
                 {
-                    return string.Empty;
+                    return JsonConvert.SerializeObject(selection);
                 }
 
                 var fileData = File.ReadAllTextAsync(filePath).Result;
                 var deserializeData = JsonConvert.DeserializeObject<List<TC_Data_API_3>>(fileData);
-                var selection = deserializeData.Where(x => x.SystemTypeETXT == systemType || x.SystemTypeFTXT == systemType).ToList();
+                selection = deserializeData.Where(x => x.SystemTypeETXT == systemType || x.SystemTypeFTXT == systemType).ToList();
 
                 return JsonConvert.SerializeObject(selection);
             }
             catch (Exception ex)
             {
-
+                // It can be better done by using proper exception handlers and customized exception.
                 throw new Exception(ex.Message);
             }
         }
@@ -111,6 +112,11 @@ namespace WebAPI_3.Services
             {
                 var solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
                 var fullPath = solutionDir + InitialFile_Path;
+
+                if (!File.Exists(fullPath))
+                {
+                    throw new Exception("Input data not found. Please add the initial input file in the folder (see README) or use the post method");
+                }
                 var initialJsonFile = File.ReadAllText(fullPath);
 
                 var tc_Data = JsonConvert.DeserializeObject<TC_Data[]>(initialJsonFile);
