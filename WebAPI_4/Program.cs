@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
 
 namespace WebAPI_4
 {
@@ -62,6 +63,10 @@ namespace WebAPI_4
               Host.CreateDefaultBuilder(args)
                   .ConfigureWebHostDefaults(webBuilder =>
                   {
+                       webBuilder.UseKestrel(serverOptions =>
+                       {
+                            serverOptions.Listen(IPAddress.Parse("127.0.0.1"), 5004);
+                       });
                        webBuilder.UseStartup<Startup>();
                   });
      }

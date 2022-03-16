@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace WebAPI_3
@@ -20,6 +21,10 @@ namespace WebAPI_3
               Host.CreateDefaultBuilder(args)
                   .ConfigureWebHostDefaults(webBuilder =>
                   {
+                       webBuilder.UseKestrel(serverOptions =>
+                       {
+                            serverOptions.Listen(IPAddress.Parse("127.0.0.1"), 5003);
+                       });
                        webBuilder.UseStartup<Startup>();
                   });
      }
