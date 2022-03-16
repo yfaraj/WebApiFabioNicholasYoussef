@@ -10,3 +10,5 @@ C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\Commo
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Release\netcoreapp3.1\CommonStructures.RazorTargetAssemblyInfo.cache
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Release\netcoreapp3.1\CommonStructures.dll
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Release\netcoreapp3.1\CommonStructures.pdb
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Release\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Release\netcoreapp3.1\TC_Data.json
