@@ -1,9 +1,11 @@
 ﻿@page "/webapi3"
 @inject IWebApi3Service _webApi3Service;
 @inject IFileUpload fileUpload;
+@inject IJSRuntime JS;
 
-<h3>Select the output file from API 2</h3>
+<h3>Select the input file from WebApi 2</h3>
 <InputFile OnChange="HandleFileSelected"></InputFile>
+<br />
 <br />
 
 @if (file != null)
@@ -13,61 +15,40 @@
     <p>File type: @file.Type</p>
 }
 <br />
-
-@code {
-    private string postDataResponse = string.Empty;
-    IFileListEntry file;
-
-    async Task HandleFileSelected(IFileListEntry[] files)
-    {
-        file = files.FirstOrDefault();
-        if (file != null)
-        {
-            await fileUpload.UploadAsync(file);                        
-        }
-    }
-
-    async Task PostData()
-    {
-        postDataResponse = await _webApi3Service.PostData();
-    }
-
-    private IEnumerable<TC_Data> TC_Data = null;
-
-    async Task LoadData()
-    {
-        TC_Data = await _webApi3Service.LoadData();        
-    }
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    await base.OnInitializedAsync();
-    //    TC_Data = await _webApi3Service.LoadData();
-    //}
-}
-
-<button @onclick="PostData">Post Data to API 1</button>
+<h3>Click here to download the API 3 output file</h3>
+<button @onclick="DownloadFile">Download</button>
 <br />
-<h3>Response from API 1</h3>
+<br />
+
+<button @onclick="PostData">Post to API 3</button>
+<br />
+<h3>Response from API 2</h3>
 @if (string.IsNullOrWhiteSpace(postDataResponse))
 {
     <h5>loading data...</h5>
 } else
 {
-    <h5>@postDataResponse</h5>
+    <h5 style="color:red">@postDataResponse</h5>
 }
 <br />
-
-<h2>Load Data</h2>
 <br />
+<h3>Search by Sytem Type</h3>
+<input type="text" @bind-value="@searchItem" />
+<input type="button" value="Search" @onclick="@SearchItem" />
+
+<br />
+<br />
+<br />
+<h3>Load all data</h3>
 <button @onclick="LoadData">Load Data</button>
 <br />
-@if (TC_Data == null)
+@if (tc_Data == null)
 {
-    <h4>loading data...</h4>
+    <h5>loading data...</h5>
 }
 else
 {
-    @if (TC_Data.Any())
+    @if (tc_Data.Any())
     {
         <table class="table">
         <thead>
@@ -87,7 +68,7 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in TC_Data)
+            @foreach (var item in tc_Data)
             {
                 <tr>
                     <td>@item?.RecallNumber?.ToString()</td>
@@ -107,4 +88,62 @@ else
         </tbody>
         </table>
     }
+}
+
+@code {
+    private IEnumerable<TC_Data> tc_Data = null;
+    private string postDataResponse = string.Empty;
+    private string searchItem;
+
+    IFileListEntry file;
+
+    async Task HandleFileSelected(IFileListEntry[] files)
+    {
+        file = files.FirstOrDefault();
+        if (file != null)
+        {
+            await fileUpload.UploadAsync(file);                        
+        }
+    }
+
+    async Task PostData()
+    {
+        postDataResponse = await _webApi3Service.PostData();
+    }
+    
+    async Task LoadData()
+    {
+        tc_Data = await _webApi3Service.LoadData();        
+    }
+
+    async Task SearchItem()
+    {
+        tc_Data = await _webApi3Service.Search(searchItem);
+    }
+
+    //DownloadFile
+    private async Task DownloadFile()
+    {
+        //var fileStream = new MemoryStream();
+        //var solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\" + ;
+        //var fileName = "log.bin";
+
+        //using var streamRef = new DotNetStreamReference(stream: fileStream);
+
+        //await JS.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef);
+    }
+
+    private Stream GetFileStream()
+    {
+        var fileStream = new MemoryStream();
+        return fileStream;
+    }
+
+
+
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    await base.OnInitializedAsync();
+    //    TC_Data = await _webApi1Service.LoadData();
+    //}
 }

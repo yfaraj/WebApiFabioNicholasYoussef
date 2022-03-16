@@ -131,58 +131,13 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/webapi1")]
-    public partial class WebApi1 : Microsoft.AspNetCore.Components.ComponentBase
+    public partial class WebApi4 : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 89 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi1.razor"
-       
-    private IEnumerable<TC_Data> tc_Data = null;
-    private string postDataResponse = string.Empty;
-    private string searchItem;
-
-    IFileListEntry file;
-
-    async Task HandleFileSelected(IFileListEntry[] files)
-    {
-        file = files.FirstOrDefault();
-        if (file != null)
-        {
-            await fileUpload.UploadAsync(file);                        
-        }
-    }
-
-    async Task PostData()
-    {
-        postDataResponse = await _webApi1Service.PostData();
-    }
-    
-    async Task LoadData()
-    {
-        tc_Data = await _webApi1Service.LoadData();        
-    }
-
-    async Task SearchItem()
-    {
-        tc_Data = await _webApi1Service.Search(searchItem);
-    }
-
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    await base.OnInitializedAsync();
-    //    TC_Data = await _webApi1Service.LoadData();
-    //}
-
-#line default
-#line hidden
-#nullable disable
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload fileUpload { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi1Service _webApi1Service { get; set; }
     }
 }
 #pragma warning restore 1591

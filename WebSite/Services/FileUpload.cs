@@ -26,7 +26,7 @@ namespace WebSite.Services
             }
             
             // Renaming the whatever input file to a standard one
-            File.Move(path, Path.Combine(_environment.ContentRootPath, "Upload", "InitialInputData.json"));
+            File.Move(path, Path.Combine(_environment.ContentRootPath, "Upload", "DataFile.json"));
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿@page "/webapi1"
-@inject IWebApi1Service _webApi1Service;
+﻿@page "/webapi2"
+@inject IWebApi1Service _webApi2Service;
 @inject IFileUpload fileUpload;
 
 <h3>Select the initial TC file input</h3>
@@ -28,7 +28,7 @@
 }
 <br />
 <br />
-<h3>Search by Manufacturer Recall Number</h3>
+<h3>Search by Category</h3>
 <input type="text" @bind-value="@searchItem" />
 <input type="button" value="Search" @onclick="@SearchItem" />
 
@@ -102,18 +102,18 @@ else
         }
     }
 
+    async Task SearchItem()
+    {
+        tc_Data = await _webApi2Service.Search(searchItem);
+    }
+
     async Task PostData()
     {
-        postDataResponse = await _webApi1Service.PostData();
+        postDataResponse = await _webApi2Service.PostData();
     }
     
     async Task LoadData()
     {
-        tc_Data = await _webApi1Service.LoadData();        
-    }
-
-    async Task SearchItem()
-    {
-        tc_Data = await _webApi1Service.Search(searchItem);
+        tc_Data = await _webApi2Service.LoadData();        
     }
 }
