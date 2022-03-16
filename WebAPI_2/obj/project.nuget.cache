@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "XSizXIMfCkd+FtT4lb5htbJaAHz3iFA7a0+N9A3/IDdo7mzvAXNI/dgnsvR9kb58zBYeyw2pdz9z99Nu+n6OOA==",
+=======
+  "dgSpecHash": "ycqP4oFp3u7n3YU1qacIqUMVm3gjVvcYdiadoRCE18Ouyy+5OHWAsyKkVqfgKO7JNQkrbh2G9d9dswbMVRqzeg==",
+>>>>>>> Fabio-4
   "success": true,
   "projectFilePath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj",
   "expectedPackageFiles": [

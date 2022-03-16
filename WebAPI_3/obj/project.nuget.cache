@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "fSr0/S2iwDtSI6pfzp/VolCFLSuBjWQpEsRuNVR2cnhlzEy/1zqW5Bsb6nrycy6Yh7uPlYPpSgIWAObRJFLW9g==",
+=======
+  "dgSpecHash": "Lcs6imGP3r4coE2w/gy6k1Xy67TMwYuco3UTUre+0C/gMJxOgUfIolMZE96BdEe0tdNeFvSX3BnRImROmKgbxA==",
+>>>>>>> Fabio-4
   "success": true,
   "projectFilePath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
   "expectedPackageFiles": [
