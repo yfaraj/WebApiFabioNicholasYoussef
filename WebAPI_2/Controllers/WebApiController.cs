@@ -154,16 +154,15 @@ namespace WebAPI_2.Controllers
 
           // GET WebAPI/Search
           /// <summary>
-          /// Search data using the CategoryETXT and/or CategoryFTXT 
+          /// Search data using the Category 
           /// </summary>
-          /// <remarks>This Web API retrieves a JSON data resulting from querying data using the CategoryETXT and/or CategoryFTXT</remarks>
-          /// <param name="categoryETXT">CategoryETXT</param>
-          /// <param name="categoryFTXT">CategoryFTXT</param>
+          /// <remarks>This Web API retrieves a JSON data resulting from querying data using the Category</remarks>
+          /// <param name="categoryETXT">Category</param>
           /// <returns>JSON data</returns>
           [HttpGet]
           [Route("Search")]
           [Consumes("application/json")]
-          public async Task<IActionResult> Search(string categoryETXT, string categoryFTXT)
+          public async Task<IActionResult> Search(string category)
           {
                string jsonFileData = "";
                List<TC_Data_API_2> result = new List<TC_Data_API_2>();
@@ -172,7 +171,7 @@ namespace WebAPI_2.Controllers
                var json = JsonConvert.DeserializeObject<List<TC_Data_API_2>>(jsonFileData);
                foreach (TC_Data_API_2 tcDataAPI2 in json)
                {
-                    if ((tcDataAPI2.CategoryETXT == categoryETXT) || (tcDataAPI2.CategoryFTXT == categoryFTXT))
+                    if ((tcDataAPI2.CategoryETXT == category) || (tcDataAPI2.CategoryFTXT == category))
                     {
                          result.Add(tcDataAPI2);
                     }
