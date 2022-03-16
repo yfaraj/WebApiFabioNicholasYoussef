@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Tf6BdiQtAxh/L0k1vmf9uvIlDrNQH4iRyQcGD/u3sJmbYIQ0239zDsu5QHXbQrnxU4rFnOEtn1JF22Xd0CxSsA==",
+  "dgSpecHash": "kLqXi5rciXuykwMqqHxdrkdYC+9EOcVdYD1x0oo0zCvCdnvW4bVfmSS4U19oXVcy7UkoWYVmLMvfWSReuTSD9Q==",
   "success": true,
   "projectFilePath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj",
   "expectedPackageFiles": [
@@ -101,12 +101,5 @@
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebSite\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

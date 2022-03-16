@@ -1,0 +1,62 @@
+﻿@page "/loaddata"
+@inject IWebApi3Service _api3Service;
+
+@code {
+    private IEnumerable<TC_Data> TC_Data = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        TC_Data = await _api3Service.LoadData();
+    }
+}
+
+<h3>Load Data</h3>
+
+@if (TC_Data == null)
+{
+    <h4>loading data...</h4>
+}
+else
+{
+    @if (TC_Data.Any())
+    {
+        <table class="table">
+        <thead>
+            <tr>
+                <th>Recall Number</th>
+                <th>Manufacture Name</th>
+                <th>Make Name</th>
+                <th>Model Name</th>
+                <th>Recall Year</th>
+                <th>Manufacturer Recall Number</th>
+                <th>Category (En)</th>
+                <th>Category (Fr)</th>
+                <th>System Type (En)</th>
+                <th>System Type (Fr)</th>
+                <th>Notification Type (En)</th>
+                <th>Notification Type (Fr)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in TC_Data)
+            {
+                <tr>
+                    <td>@item?.RecallNumber?.ToString()</td>
+                    <td>@item?.ManufactureName?.ToString()</td>
+                    <td>@item?.MakeName?.ToString()</td>
+                    <td>@item?.ModelName?.ToString()</td>
+                    <td>@item?.RecallYear?.ToString()</td>
+                    <td>@item?.ManufacturerRecallNumber?.ToString()</td>
+                    <td>@item?.CategoryETXT?.ToString()</td>
+                    <td>@item?.CategoryFTXT?.ToString()</td>
+                    <td>@item?.SystemTypeETXT?.ToString()</td>
+                    <td>@item?.SystemTypeFTXT?.ToString()</td>
+                    <td>@item?.NotificationTypeETXT?.ToString()</td>
+                    <td>@item?.NotificationTypeFTXT?.ToString()</td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    }
+}

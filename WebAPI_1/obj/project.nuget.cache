@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Vf4YfzPbRX4jFEmtCHtItqL2WkgIYBpUZpve2jZNAvxr2tmDEjQOJYXUfIpci/Ucun+m/t2CNBPbhQbbAqLWuQ==",
+  "dgSpecHash": "Zrsj33OOltCmD+X6We8DoBf0gJ5wjpE6wbxU5i3PgvbmsbLnv+FQfBM5k+BSGmrWiB6kiRZL9quzpAwUl7AdZw==",
   "success": true,
   "projectFilePath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj",
   "expectedPackageFiles": [
@@ -9,12 +9,5 @@
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\restsharp\\107.3.0\\restsharp.107.3.0.nupkg.sha512",
     "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\system.text.json\\5.0.0\\system.text.json.5.0.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }
