@@ -53,10 +53,10 @@ namespace WebAPI_3.Services
                     item.ManufacturerRecallNumber = string.IsNullOrWhiteSpace(item.ManufacturerRecallNumber) ?
                         vrdDataList.FirstOrDefault(x => x.Name.Equals(Manufacturer_Recall_No_Txt)).Value.Literal :
                         item.ManufacturerRecallNumber;
-                    item.CategoryETXT = string.IsNullOrWhiteSpace(item.ManufacturerRecallNumber) ?
+                    item.CategoryETXT = string.IsNullOrWhiteSpace(item.CategoryETXT) ?
                         vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Etxt)).Value.Literal :
                         item.CategoryETXT;
-                    item.CategoryFTXT = string.IsNullOrWhiteSpace(item.ManufacturerRecallNumber) ?
+                    item.CategoryFTXT = string.IsNullOrWhiteSpace(item.CategoryFTXT) ?
                         vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Ftxt)).Value.Literal :
                         item.CategoryFTXT;
 

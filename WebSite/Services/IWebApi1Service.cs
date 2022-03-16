@@ -8,6 +8,6 @@ namespace WebSite.Services
     {
         Task<IEnumerable<TC_Data>> LoadData();
         Task<string> PostData();
-        Task<IEnumerable<TC_Data>> Search();
+        Task<IEnumerable<TC_Data>> Search(string manufacturerRecallNumber);
     }
 }

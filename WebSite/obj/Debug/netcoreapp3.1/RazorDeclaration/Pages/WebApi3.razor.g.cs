@@ -140,9 +140,12 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi3.razor"
+#line 89 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi3.razor"
        
+    private IEnumerable<TC_Data> tc_Data = null;
     private string postDataResponse = string.Empty;
+    private string searchItem;
+
     IFileListEntry file;
 
     async Task HandleFileSelected(IFileListEntry[] files)
@@ -158,17 +161,21 @@ using System.IO;
     {
         postDataResponse = await _webApi3Service.PostData();
     }
-
-    private IEnumerable<TC_Data> TC_Data = null;
-
+    
     async Task LoadData()
     {
-        TC_Data = await _webApi3Service.LoadData();        
+        tc_Data = await _webApi3Service.LoadData();        
     }
+
+    async Task SearchItem()
+    {
+        tc_Data = await _webApi3Service.Search(searchItem);
+    }
+
     //protected override async Task OnInitializedAsync()
     //{
     //    await base.OnInitializedAsync();
-    //    TC_Data = await _webApi3Service.LoadData();
+    //    TC_Data = await _webApi1Service.LoadData();
     //}
 
 #line default

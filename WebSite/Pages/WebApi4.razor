@@ -1,5 +1,5 @@
-﻿@page "/webapi1"
-@inject IWebApi1Service _webApi1Service;
+﻿@page "/webapi4"
+@inject IWebApi1Service _webApi4Service;
 @inject IFileUpload fileUpload;
 
 <h3>Select the initial TC file input</h3>
@@ -104,16 +104,16 @@ else
 
     async Task PostData()
     {
-        postDataResponse = await _webApi1Service.PostData();
+        postDataResponse = await _webApi4Service.PostData();
     }
     
     async Task LoadData()
     {
-        tc_Data = await _webApi1Service.LoadData();        
+        tc_Data = await _webApi4Service.LoadData();        
     }
 
     async Task SearchItem()
     {
-        tc_Data = await _webApi1Service.Search(searchItem);
+        tc_Data = await _webApi4Service.Search(searchItem);
     }
 }
