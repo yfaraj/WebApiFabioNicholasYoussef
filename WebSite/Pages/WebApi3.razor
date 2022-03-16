@@ -1,8 +1,8 @@
-﻿@page "/webapi1"
-@inject IWebApi1Service _webApi1Service;
+﻿@page "/webapi3"
+@inject IWebApi3Service _webApi3Service;
 @inject IFileUpload fileUpload;
 
-<h3>Select the initial TC File Input</h3>
+<h3>Select the output file from API 2</h3>
 <InputFile OnChange="HandleFileSelected"></InputFile>
 <br />
 
@@ -29,19 +29,19 @@
 
     async Task PostData()
     {
-        postDataResponse = await _webApi1Service.PostData();
+        postDataResponse = await _webApi3Service.PostData();
     }
 
     private IEnumerable<TC_Data> TC_Data = null;
 
     async Task LoadData()
     {
-        TC_Data = await _webApi1Service.LoadData();        
+        TC_Data = await _webApi3Service.LoadData();        
     }
     //protected override async Task OnInitializedAsync()
     //{
     //    await base.OnInitializedAsync();
-    //    TC_Data = await _webApi1Service.LoadData();
+    //    TC_Data = await _webApi3Service.LoadData();
     //}
 }
 

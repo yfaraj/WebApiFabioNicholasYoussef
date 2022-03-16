@@ -15,8 +15,7 @@ namespace WebSite.Services
         }
 
         public async Task UploadAsync(IFileListEntry fileEntry)
-        {           
-            // "InitialInputData.json";
+        {
             var path= Path.Combine(_environment.ContentRootPath,"Upload",fileEntry.Name);
             var ms = new MemoryStream();
             await fileEntry.Data.CopyToAsync(ms);

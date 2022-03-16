@@ -29,11 +29,25 @@ namespace WebSite
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            services.AddHttpClient<IWebApi1Service, WebApi1Service>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:5001/");
+            });
+            services.AddHttpClient<IWebApi2Service, WebApi2Service>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:5002/");
+            });
             services.AddHttpClient<IWebApi3Service, WebApi3Service>(client =>
             {
                 client.BaseAddress = new Uri("https://localhost:5003/");
             });
-            services.AddScoped<IFileUpload, IFileUpload>();
+            services.AddHttpClient<IWebApi4Service, WebApi4Service>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:5004/");
+            });
+
+            services.AddScoped<IFileUpload, FileUpload>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

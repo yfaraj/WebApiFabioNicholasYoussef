@@ -131,8 +131,8 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/webapi1")]
-    public partial class WebApi1 : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/webapi3")]
+    public partial class WebApi3 : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -140,7 +140,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 17 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi1.razor"
+#line 17 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi3.razor"
        
     private string postDataResponse = string.Empty;
     IFileListEntry file;
@@ -175,7 +175,7 @@ using System.IO;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload fileUpload { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi1Service _webApi1Service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi3Service _webApi1Service { get; set; }
     }
 }
 #pragma warning restore 1591

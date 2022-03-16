@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System;
 using Newtonsoft.Json;
+using System.Net.Http.Formatting;
 
 namespace WebSite.Services
 {
@@ -34,9 +35,20 @@ namespace WebSite.Services
             }
         }
 
-        public Task<IEnumerable<TC_Data>> PostData()
+        public Task<string> PostData()
         {
-            throw new System.NotImplementedException();
+            try
+            {
+                var jsonString = await GetJsonString();
+                var tcData = JsonConvert.DeserializeObject<TC_Data[]>(jsonString);
+                var result = await _httpClient.PostAsync("http://localhost:5001/WebAPI/V1/PostFileData", tcData, new JsonMediaTypeFormatter());
+
+                return result.StatusCode.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Task<IEnumerable<TC_Data>> Search()
