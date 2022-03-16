@@ -45,7 +45,7 @@ namespace WebAPI_1.Controllers
                {
                     string rN = tcDataArray[i].RecallNumber;
 
-                    string baseAddress = "https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/2015321";
+                    string baseAddress = "https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/" + rN;
                     var client3 = new RestClient(baseAddress);
                     var request = new RestRequest(baseAddress, Method.Get);
                     request.AddHeader("Content-Type", "application/json");
