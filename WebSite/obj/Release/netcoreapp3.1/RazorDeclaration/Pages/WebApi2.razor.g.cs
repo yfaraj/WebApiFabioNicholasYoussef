@@ -131,8 +131,8 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/webapi1")]
-    public partial class WebApi1 : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/webapi2")]
+    public partial class WebApi2 : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -140,7 +140,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi1.razor"
+#line 89 "C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi2.razor"
        
     private IEnumerable<TC_Data> tc_Data = null;
     private string postDataResponse = string.Empty;
@@ -157,26 +157,26 @@ using System.IO;
         }
     }
 
+    async Task SearchItem()
+    {
+        tc_Data = await _webApi2Service.Search(searchItem);
+    }
+
     async Task PostData()
     {
-        postDataResponse = await _webApi1Service.PostData();
+        postDataResponse = await _webApi2Service.PostData();
     }
     
     async Task LoadData()
     {
-        tc_Data = await _webApi1Service.LoadData();        
-    }
-
-    async Task SearchItem()
-    {
-        tc_Data = await _webApi1Service.Search(searchItem);
+        tc_Data = await _webApi2Service.LoadData();        
     }
 
 #line default
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload fileUpload { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi1Service _webApi1Service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi1Service _webApi2Service { get; set; }
     }
 }
 #pragma warning restore 1591

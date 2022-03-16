@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Security;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -117,7 +118,8 @@ namespace WebAPI_1.Controllers
                }
 
                string json = JsonConvert.SerializeObject(tcApiDataList);
-               System.IO.File.WriteAllText(@"output.json", json);
+               string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+               System.IO.File.WriteAllText(path +"/output.json", json);
 
                return Ok();
           }
@@ -135,7 +137,8 @@ namespace WebAPI_1.Controllers
           {
                string jsonFileData = "";
 
-               jsonFileData = System.IO.File.ReadAllText(@"output.json");
+               string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+               jsonFileData = System.IO.File.ReadAllText(path + "/output.json");
                var json = JsonConvert.DeserializeObject<List<TC_Data_API_1>>(jsonFileData);
 
                return Ok(json);
@@ -156,7 +159,8 @@ namespace WebAPI_1.Controllers
                string jsonFileData = "";
                List<TC_Data_API_1> result = new List<TC_Data_API_1>();
 
-               jsonFileData = System.IO.File.ReadAllText(@"output.json");
+               string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+               jsonFileData = System.IO.File.ReadAllText(path + "/output.json");
                var json = JsonConvert.DeserializeObject<List<TC_Data_API_1>>(jsonFileData);
                foreach(TC_Data_API_1 tcDataAPI1 in json)
                {
