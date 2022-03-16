@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj": {}
+    "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj": {}
   },
   "projects": {
-    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
+    "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
+        "projectUniqueName": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
         "projectName": "CommonStructures",
-        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
-        "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
-        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\obj\\",
+        "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
+        "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,8 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -68,17 +71,21 @@
         }
       }
     },
-    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj": {
+    "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj",
+        "projectUniqueName": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj",
         "projectName": "WebAPI_1",
-        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj",
-        "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
-        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\obj\\",
+        "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj",
+        "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_1\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -86,15 +93,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
-                "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
+              "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
+                "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
               }
             }
           }
@@ -144,17 +150,21 @@
         }
       }
     },
-    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj": {
+    "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj",
+        "projectUniqueName": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj",
         "projectName": "WebAPI_2",
-        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj",
-        "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
-        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_2\\obj\\",
+        "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj",
+        "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -162,8 +172,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -216,17 +225,21 @@
         }
       }
     },
-    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj": {
+    "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
+        "projectUniqueName": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
         "projectName": "WebAPI_3",
-        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
-        "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
-        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\obj\\",
+        "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj",
+        "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_3\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -234,15 +247,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
-                "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
+              "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
+                "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
               }
             }
           }
@@ -292,17 +304,21 @@
         }
       }
     },
-    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj": {
+    "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj",
+        "projectUniqueName": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj",
         "projectName": "WebAPI_4",
-        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj",
-        "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
-        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_4\\obj\\",
+        "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj",
+        "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_4\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -310,8 +326,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -364,17 +379,21 @@
         }
       }
     },
-    "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj": {
+    "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj",
+        "projectUniqueName": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj",
         "projectName": "WebSite",
-        "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj",
-        "packagesPath": "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\",
-        "outputPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebSite\\obj\\",
+        "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebSite\\WebSite.csproj",
+        "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebSite\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Fabio.Pereira\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -382,27 +401,26 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/iqmetrix/_packaging/iqmetrix/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
-                "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
+              "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj": {
+                "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj"
               },
-              "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj": {
-                "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj"
+              "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj": {
+                "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_1\\WebAPI_1.csproj"
               },
-              "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj": {
-                "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj"
+              "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj": {
+                "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_2\\WebAPI_2.csproj"
               },
-              "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj": {
-                "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj"
+              "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj": {
+                "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_3\\WebAPI_3.csproj"
               },
-              "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj": {
-                "projectPath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj"
+              "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj": {
+                "projectPath": "C:\\Users\\Utilisateur\\Documents\\Transport Canada\\WebApiFabioNicholasYoussef\\WebAPI_4\\WebAPI_4.csproj"
               }
             }
           }

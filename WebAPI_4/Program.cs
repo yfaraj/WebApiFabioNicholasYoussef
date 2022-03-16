@@ -22,12 +22,12 @@ namespace WebAPI_4
           {
                using (HttpClient client = new HttpClient())
                {
-                    using (httpResponseMessage response = await client.GetAsync("www.google.ca"))
+                    using (HttpResponseMessage response = await client.GetAsync("www.google.ca"))
                     {
-                         using(httpContent content = response.Content)
+                         using(HttpContent content = response.Content)
                          {
                               string mycontent = await content.ReadAsStringAsync();
-                              httpContentHeaders header = content.Headers;
+                              var header = content.Headers;
                               Console.WriteLine(header);
                          }
                     }
@@ -45,12 +45,12 @@ namespace WebAPI_4
                HttpContent q = new FormUrlEncodedContent(queries);
                using (HttpClient client = new HttpClient())
                {
-                    using (httpResponseMessage response = await client.PostAsync(url, q))
+                    using (HttpResponseMessage response = await client.PostAsync(url, q))
                     {
-                         using(httpContent content = response.Content)
+                         using(HttpContent content = response.Content)
                          {
                               string mycontent = await content.ReadAsStringAsync();
-                              httpContentHeaders header = content.Headers;
+                              var header = content.Headers;
                               
                               Console.WriteLine(mycontent);
                          }

@@ -1,15 +1,3 @@
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.csproj.AssemblyReference.cache
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.AssemblyInfoInputs.cache
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.AssemblyInfo.cs
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.csproj.CoreCompileInputs.cache
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CommonStructures.deps.json
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CommonStructures.dll
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CommonStructures.pdb
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\staticwebassets\CommonStructures.StaticWebAssets.Manifest.cache
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.RazorTargetAssemblyInfo.cache
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.dll
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.pdb
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CSCompVehicleRecallStart.json
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\TC_Data.json
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CommonStructures.deps.json
@@ -24,3 +12,17 @@ C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.dll
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.pdb
 C:\01-LAB\TC\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.csproj.AssemblyReference.cache
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\TC_Data.json
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CommonStructures.deps.json
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CommonStructures.dll
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\bin\Debug\netcoreapp3.1\CommonStructures.pdb
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.csproj.AssemblyReference.cache
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.AssemblyInfoInputs.cache
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.AssemblyInfo.cs
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.csproj.CoreCompileInputs.cache
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\staticwebassets\CommonStructures.StaticWebAssets.Manifest.cache
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.RazorTargetAssemblyInfo.cache
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.dll
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.pdb
