@@ -10,7 +10,7 @@ using System.Text.Json;
 
 namespace WebApiUnitTests
 {
-     public class WebAPI_1_UnitTests
+     public class WebAPI_3_UnitTests
      {
           [SetUp]
           public void Setup()
@@ -23,7 +23,7 @@ namespace WebApiUnitTests
                string jsonData = File.ReadAllText("CSCompVehicleRecallStart.json");
                TC_Data[] tcOriginalDataArray = JsonConvert.DeserializeObject<TC_Data[]>(jsonData);
                var client = new HttpClient();
-               client.PostAsync("http://127.0.0.1:5001/WebAPI/V1/PostFileData", new StringContent(jsonData, Encoding.UTF8, "application/json"));
+               client.PostAsync("http://127.0.0.1:5003/WebAPI/V1/PostFileData", new StringContent(jsonData, Encoding.UTF8, "application/json"));
                Assert.Pass();
           }
 
