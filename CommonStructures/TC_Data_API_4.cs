@@ -1,13 +1,11 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.Generic;
 
 namespace CommonStructures
 {
      public class TC_Data_API_4 : TC_Data_API_3
-    {
-        [JsonProperty(Order = 11)]
-        public string NotificationTypeETXT { get; set; }
-        [JsonProperty(Order = 12)]
-        public string NotificationTypeFTXT { get; set; }
+     {                  
+          public string notificationTypeETXT { get; set; }
+          public string notificationTypeFTXT { get; set; }
           
           /*
           API_4_POST(C_InputFile_JSON)

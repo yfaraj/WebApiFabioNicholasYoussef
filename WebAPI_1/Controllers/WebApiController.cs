@@ -57,7 +57,7 @@ namespace WebAPI_1.Controllers
                List<TC_Data_API_1> tcApiDataList = new List<TC_Data_API_1>();
                for (int i = 0; i < tcDataArray.Length; i++)
                {
-                    string rN = tcDataArray[i].RecallNumber;
+                    string rN = tcDataArray[i].recallNumber;
 
                     string baseAddress = "https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/2015321";
                     var client3 = new RestClient(baseAddress);
@@ -78,12 +78,12 @@ namespace WebAPI_1.Controllers
                                    if (resultSetItem.Value.Literal == rN)
                                    {
                                         TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
-                                        tC_Data_API_1.RecallNumber = tcDataArray[i].RecallNumber;
-                                        tC_Data_API_1.ManufactureName = tcDataArray[i].ManufactureName;
-                                        tC_Data_API_1.MakeName = tcDataArray[i].MakeName;
-                                        tC_Data_API_1.ModelName = tcDataArray[i].ModelName;
-                                        tC_Data_API_1.RecallYear = tcDataArray[i].RecallYear;
-                                        tC_Data_API_1.ManufacturerRecallNumber = rN;
+                                        tC_Data_API_1.recallNumber = tcDataArray[i].recallNumber;
+                                        tC_Data_API_1.manufactureName = tcDataArray[i].manufactureName;
+                                        tC_Data_API_1.makeName = tcDataArray[i].makeName;
+                                        tC_Data_API_1.modelName = tcDataArray[i].modelName;
+                                        tC_Data_API_1.recallYear = tcDataArray[i].recallYear;
+                                        tC_Data_API_1.manufacturerRecallNumber = rN;
                                         tcApiDataList.Add(tC_Data_API_1);
 
                                         atLeastFoundOne = true;
@@ -94,12 +94,12 @@ namespace WebAPI_1.Controllers
                     if (!atLeastFoundOne)
                     {
                          TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
-                         tC_Data_API_1.RecallNumber = tcDataArray[i].RecallNumber;
-                         tC_Data_API_1.ManufactureName = tcDataArray[i].ManufactureName;
-                         tC_Data_API_1.MakeName = tcDataArray[i].MakeName;
-                         tC_Data_API_1.ModelName = tcDataArray[i].ModelName;
-                         tC_Data_API_1.RecallYear = tcDataArray[i].RecallYear;
-                         tC_Data_API_1.ManufacturerRecallNumber = "";
+                         tC_Data_API_1.recallNumber = tcDataArray[i].recallNumber;
+                         tC_Data_API_1.manufactureName = tcDataArray[i].manufactureName;
+                         tC_Data_API_1.makeName = tcDataArray[i].makeName;
+                         tC_Data_API_1.modelName = tcDataArray[i].modelName;
+                         tC_Data_API_1.recallYear = tcDataArray[i].recallYear;
+                         tC_Data_API_1.manufacturerRecallNumber = "";
                          tcApiDataList.Add(tC_Data_API_1);
                     }
                }

@@ -1,12 +1,8 @@
-﻿using Newtonsoft.Json;
-
-namespace CommonStructures
+﻿namespace CommonStructures
 {
      public class TC_Data_API_2 : TC_Data_API_1
      {
-        [JsonProperty(Order = 7)]
-        public string CategoryETXT { get; set; }
-        [JsonProperty(Order = 8)]
-        public string CategoryFTXT { get; set; }
+          public string categoryETXT { get; set; }
+          public string categoryFTXT { get; set; }
      }
 }

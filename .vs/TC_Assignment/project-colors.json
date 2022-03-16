@@ -25,27 +25,7 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
-    },
-    "b474ae70-3449-4fe1-8af5-7bfd30bbc5c8": {
-      "ProjectGuid": "b474ae70-3449-4fe1-8af5-7bfd30bbc5c8",
-      "DisplayName": "WebAPI_4",
-      "ColorIndex": 4
-    },
-    "3808edb5-574f-4468-91fa-ab19c63eb2b6": {
-      "ProjectGuid": "3808edb5-574f-4468-91fa-ab19c63eb2b6",
-      "DisplayName": "WebSite",
-      "ColorIndex": 5
-    },
-    "a358bce5-d96b-43c7-bff8-023418d2dfd2": {
-      "ProjectGuid": "a358bce5-d96b-43c7-bff8-023418d2dfd2",
-      "DisplayName": "WebSite",
-      "ColorIndex": 6
-    },
-    "3bdda5eb-7c54-442c-b9fb-35e8c2a2e79b": {
-      "ProjectGuid": "3bdda5eb-7c54-442c-b9fb-35e8c2a2e79b",
-      "DisplayName": "WebApiUnitTests",
-      "ColorIndex": 7
     }
   },
-  "NextColorIndex": 8
+  "NextColorIndex": 4
 }

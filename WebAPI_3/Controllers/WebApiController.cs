@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CommonStructures;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System.IO;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using WebAPI_3.Services;
 
 namespace WebAPI_3.Controllers
 {
-    [Route("WebAPI/v{version:apiVersion}")]
+     [Route("WebAPI/v{version:apiVersion}")]
      [ApiController]
      [ApiVersion("1.0")]
      public class WebApiController : ControllerBase
@@ -19,7 +23,6 @@ namespace WebAPI_3.Controllers
         {
             _logger = logger;
             _clientFactory = clientFactory;
-            DataBuilderService.Init(_clientFactory);
         }
 
         // POST WebAPI/PostFileData
@@ -27,28 +30,33 @@ namespace WebAPI_3.Controllers
         /// Post a JSON file data
         /// </summary>
         /// <remarks>This Web API posts file data and manipulates it</remarks>
-        /// <param name="jsonInput">JSON file data</param>
+        /// <param name="jsonData">JSON file data</param>
         /// <returns></returns>
         [HttpPost]
         [Route("PostFileData")]
         [Consumes("application/json")]
-        public async Task<IActionResult> PostFileData([FromBody] string jsonInput)
+        public async Task<IActionResult> PostFileData([FromBody] string jsonData)
         {
-            await ProcessInputData(jsonInput);
-
-            return Ok("Updated file created successfully.");
-        }
-
-        private async Task ProcessInputData(string jsonInput)
-        {
-            if (string.IsNullOrWhiteSpace(jsonInput))
+            if (string.IsNullOrWhiteSpace(jsonData))
             {
-                jsonInput = await DataBuilderService.LoadDataFromPreviousAPIs();
+                DataBuilderService.Init(_clientFactory);
+                jsonData = await DataBuilderService.LoadDataFromPreviousAPIs();
             }
 
-            var outputData = await DataBuilderService.GetSystemTypeData(jsonInput);
+            var tc_Data3 = JsonConvert.DeserializeObject<TC_Data_API_3[]>(jsonData);
 
-            DataBuilderService.CreateJsonFile(outputData);
+
+
+            /*Pseudo Code:
+            * Input_Data = Read_TC_Input_File_JSON_Data(jsonData);
+            foreach (Recall Number)
+            {
+                System_Type = Call_TC_API(ecall Number);//https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/2016253
+                Add_To_Input_Data(System_Type);
+            }
+            Save_To_File_1(Input_Data);*/
+
+            return Ok(jsonData);
         }
 
         // GET WebAPI/GetFileData
@@ -62,18 +70,14 @@ namespace WebAPI_3.Controllers
         [Consumes("application/json")]
         public async Task<IActionResult> GetFileData()
         {
-            //await PostFileData("");
+            string jsonFileData = "";
+            var file = await PostFileData(null);
 
-            var filePath = Directory.GetCurrentDirectory() + "\\InputFromAPI_3.json";
+            /*Pseudo Code:
+            * jsonFileData = Read_TC_Output_File_JSON_Data();
+            */
 
-            if (!System.IO.File.Exists(filePath))
-            {
-                return BadRequest("The data is missing or broken. Please run the PostFileData funtion in order to get the data ready.");
-            }
-
-            var inputFromApi3 = System.IO.File.ReadAllText(filePath);
-
-            return Ok(inputFromApi3);
+            return Ok(jsonFileData);
         }
 
         // GET WebAPI/Search
@@ -88,14 +92,21 @@ namespace WebAPI_3.Controllers
         [Consumes("application/json")]
         public async Task<IActionResult> Search(string systemType)
         {
-            var inputFromApi3 = DataBuilderService.GetDataBySystemType(systemType).Result;
+            string resultJsonData = "";
 
-            if (inputFromApi3 == string.Empty)
-            {
-                return BadRequest("Sytem type not found.");
-            }
+            /*Pseudo Code:
+            *   jsonFileData = Read_TC_Output_File_JSON_Data();
+            *   
+            *   foreach(API_Object_Data in jsonFileData)
+	            {
+		            if ((API_Object_Data.SYSTEM_TYPE_ETXT == systemType) || (API_Object_Data.SYSTEM_TYPE_FTXT == systemType))
+		            {
+			            resultJsonData.Add(API_Object_Data);
+		            }
+	            }
+            */
 
-            return Ok(inputFromApi3);
+            return Ok(resultJsonData);
         }
      }
 }
