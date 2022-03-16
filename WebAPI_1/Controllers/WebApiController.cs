@@ -69,29 +69,55 @@ namespace WebAPI_1.Controllers
                     TC_Data_Online tcDataOnline = JsonConvert.DeserializeObject<TC_Data_Online>(response.Content);
 
                     bool atLeastFoundOne = false;
-                    foreach(var resultSet in tcDataOnline.ResultSet)
+                    int maxYear = 0;
+                    string manufacturerRecallNumber = "";
+                    foreach (var resultSet in tcDataOnline.ResultSet)
                     {
-                         foreach(var resultSetItem in resultSet)
+                         bool recallNumberNumFound = false;
+                         int year = 0;
+                         string currentManufacturerRecallNumber = "";
+                         foreach (var resultSetItem in resultSet)
                          {
                               if (resultSetItem.Name == "RECALL_NUMBER_NUM")
                               {
                                    if (resultSetItem.Value.Literal == rN)
                                    {
-                                        TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
-                                        tC_Data_API_1.recallNumber = tcDataArray[i].recallNumber;
-                                        tC_Data_API_1.manufactureName = tcDataArray[i].manufactureName;
-                                        tC_Data_API_1.makeName = tcDataArray[i].makeName;
-                                        tC_Data_API_1.modelName = tcDataArray[i].modelName;
-                                        tC_Data_API_1.recallYear = tcDataArray[i].recallYear;
-                                        tC_Data_API_1.manufacturerRecallNumber = rN;
-                                        tcApiDataList.Add(tC_Data_API_1);
-
-                                        atLeastFoundOne = true;
+                                        atLeastFoundOne = recallNumberNumFound = true;
+                                   }
+                              }
+                              if (resultSetItem.Name == "MANUFACTURER_RECALL_NO_TXT")
+                              {
+                                   currentManufacturerRecallNumber = resultSetItem.Value.Literal;
+                              }
+                              if (resultSetItem.Name == "DATE_YEAR_CD")
+                              {
+                                   Int32.TryParse(resultSetItem.Value.Literal, out year);
+                              }
+                         }
+                         if (recallNumberNumFound)
+                         {
+                              if (year != 0)
+                              {
+                                   if (year > maxYear)
+                                   {
+                                        maxYear = year;
+                                        manufacturerRecallNumber = currentManufacturerRecallNumber;
                                    }
                               }
                          }
                     }
-                    if (!atLeastFoundOne)
+                    if (atLeastFoundOne)
+                    {
+                         TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
+                         tC_Data_API_1.recallNumber = tcDataArray[i].recallNumber;
+                         tC_Data_API_1.manufactureName = tcDataArray[i].manufactureName;
+                         tC_Data_API_1.makeName = tcDataArray[i].makeName;
+                         tC_Data_API_1.modelName = tcDataArray[i].modelName;
+                         tC_Data_API_1.recallYear = tcDataArray[i].recallYear;
+                         tC_Data_API_1.manufacturerRecallNumber = manufacturerRecallNumber;
+                         tcApiDataList.Add(tC_Data_API_1);
+                    }
+                    else
                     {
                          TC_Data_API_1 tC_Data_API_1 = new TC_Data_API_1();
                          tC_Data_API_1.recallNumber = tcDataArray[i].recallNumber;
