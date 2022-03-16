@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+d/MhkjoQnt+1VTvbNa61JjH0KyOxyFs8u4nERdqSIiHqT+mdm3GiHsZLPDIb+a0MhlhlJFIizbZ2Iam2P6Tzg==",
+  "dgSpecHash": "JkNcLspAoiXnqef+xj1AXbYPGRgzSBebx9/9mI3NFHRBaFePdpiaTxaqZzy+vjjMRLg9Z5c/RrNQx/P1butOrg==",
   "success": true,
   "projectFilePath": "C:\\01-LAB\\TC\\WebApiFabioNicholasYoussef\\CommonStructures\\CommonStructures.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Fabio.Pereira\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
