@@ -43,7 +43,6 @@ namespace WebSite.Services
             try
             {
                 var callResult = await _httpClient.GetStringAsync(WebApi2GetUrl);
-                //var jsonData = await GetJsonString();
                 var resultData = JsonConvert.DeserializeObject<TC_Data[]>(callResult);
 
                 return resultData;
