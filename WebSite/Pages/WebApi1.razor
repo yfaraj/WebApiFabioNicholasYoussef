@@ -21,10 +21,10 @@
 <h3>Response from API 1</h3>
 @if (string.IsNullOrWhiteSpace(postDataResponse))
 {
-    <h5>loading data...</h5>
+    <h5>loading data... please wait</h5>
 } else
 {
-    <h5>@postDataResponse</h5>
+    <h5 style="color:red">@postDataResponse</h5>
 }
 <br />
 <br />
@@ -38,9 +38,29 @@
 <h3>Load all data</h3>
 <button @onclick="LoadData">Load Data</button>
 <br />
-@if (tc_Data == null)
+@if (tc_Data == null && IsLoadingData == true)
 {
-    <h5>loading data...</h5>
+    <h5>loading data...  please wait</h5>
+}
+
+else if (tc_Data == null)
+{
+    <table class="table">
+            <thead>
+                <tr>
+                    <th>Recall Number</th>
+                    <th>Manufacture Name</th>
+                    <th>Make Name</th>
+                    <th>Model Name</th>
+                    <th>Recall Year</th>
+                    <th>Manufacturer Recall Number</th>
+                    <th>Category (En)</th>
+                    <th>Category (Fr)</th>
+                    <th>System Type (En)</th>
+                    <th>System Type (Fr)</th>
+                </tr>
+            </thead>
+        </table>
 }
 else
 {
@@ -55,12 +75,6 @@ else
                 <th>Model Name</th>
                 <th>Recall Year</th>
                 <th>Manufacturer Recall Number</th>
-                <th>Category (En)</th>
-                <th>Category (Fr)</th>
-                <th>System Type (En)</th>
-                <th>System Type (Fr)</th>
-                <th>Notification Type (En)</th>
-                <th>Notification Type (Fr)</th>
             </tr>
         </thead>
         <tbody>
@@ -73,12 +87,6 @@ else
                     <td>@item?.ModelName?.ToString()</td>
                     <td>@item?.RecallYear?.ToString()</td>
                     <td>@item?.ManufacturerRecallNumber?.ToString()</td>
-                    <td>@item?.CategoryETXT?.ToString()</td>
-                    <td>@item?.CategoryFTXT?.ToString()</td>
-                    <td>@item?.SystemTypeETXT?.ToString()</td>
-                    <td>@item?.SystemTypeFTXT?.ToString()</td>
-                    <td>@item?.NotificationTypeETXT?.ToString()</td>
-                    <td>@item?.NotificationTypeFTXT?.ToString()</td>
                 </tr>
             }
         </tbody>
@@ -88,6 +96,7 @@ else
 
 @code {
     private IEnumerable<TC_Data> tc_Data = null;
+    private bool IsLoadingData = false;
     private string postDataResponse = string.Empty;
     private string searchItem;
 
@@ -109,6 +118,7 @@ else
     
     async Task LoadData()
     {
+        IsLoadingData = true;
         tc_Data = await _webApi1Service.LoadData();        
     }
 

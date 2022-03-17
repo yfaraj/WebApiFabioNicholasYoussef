@@ -140,9 +140,10 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 93 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi3.razor"
+#line 111 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi3.razor"
        
     private IEnumerable<TC_Data> tc_Data = null;
+    private bool IsLoadingData = false;
     private string postDataResponse = string.Empty;
     private string searchItem;
 
@@ -161,9 +162,10 @@ using System.IO;
     {
         postDataResponse = await _webApi3Service.PostData();
     }
-    
+
     async Task LoadData()
     {
+        IsLoadingData = true;
         tc_Data = await _webApi3Service.LoadData();        
     }
 
@@ -171,32 +173,6 @@ using System.IO;
     {
         tc_Data = await _webApi3Service.Search(searchItem);
     }
-
-    //DownloadFile
-    private async Task DownloadFile()
-    {
-        //var fileStream = new MemoryStream();
-        //var solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\" + ;
-        //var fileName = "log.bin";
-
-        //using var streamRef = new DotNetStreamReference(stream: fileStream);
-
-        //await JS.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef);
-    }
-
-    private Stream GetFileStream()
-    {
-        var fileStream = new MemoryStream();
-        return fileStream;
-    }
-
-
-
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    await base.OnInitializedAsync();
-    //    TC_Data = await _webApi1Service.LoadData();
-    //}
 
 #line default
 #line hidden

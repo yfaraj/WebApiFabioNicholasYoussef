@@ -140,7 +140,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi2.razor"
+#line 81 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi2.razor"
        
     private IEnumerable<TC_Data> tc_Data = null;
     private string postDataResponse = string.Empty;

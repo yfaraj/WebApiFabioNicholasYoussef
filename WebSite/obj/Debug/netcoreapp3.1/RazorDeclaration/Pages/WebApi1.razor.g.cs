@@ -140,9 +140,10 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi1.razor"
+#line 97 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi1.razor"
        
     private IEnumerable<TC_Data> tc_Data = null;
+    private bool IsLoadingData = false;
     private string postDataResponse = string.Empty;
     private string searchItem;
 
@@ -164,6 +165,7 @@ using System.IO;
     
     async Task LoadData()
     {
+        IsLoadingData = true;
         tc_Data = await _webApi1Service.LoadData();        
     }
 

@@ -15,11 +15,14 @@ namespace WebAPI_3.Services
         
         // TODO Fabio: Move this to appsettings
         private const string InitialFile_Path = "\\WebApiFabioNicholasYoussef\\CommonStructures\\CSCompVehicleRecallStart.json";
+        private const string OutputFileName = "OutputFromAPI_3.json";
         private const string Manufacturer_Recall_No_Txt = "MANUFACTURER_RECALL_NO_TXT";
         private const string Category_Etxt = "CATEGORY_ETXT";
         private const string Category_Ftxt = "CATEGORY_FTXT";
         private const string System_Type_Etxt = "SYSTEM_TYPE_ETXT";
         private const string System_Type_Ftxt = "SYSTEM_TYPE_FTXT";
+        private const string Notification_Type_Etxt = "NOTIFICATION_TYPE_ETXT";
+        private const string Notification_Type_Ftxt = "NOTIFICATION_TYPE_FTXT";
 
         public static void Init(IHttpClientFactory clientFactory)
         {
@@ -78,7 +81,7 @@ namespace WebAPI_3.Services
             // Saving data to the API 3 folder.
             // It's better to have the path being added to appsettings
             var directory = Directory.GetCurrentDirectory();
-            File.WriteAllText(directory + "\\InputFromAPI_3.json", completeDataJson);
+            File.WriteAllText(directory + "\\" + OutputFileName, completeDataJson);
         }
 
         public static async Task<string> GetDataBySystemType(string systemType)
@@ -86,7 +89,7 @@ namespace WebAPI_3.Services
             try
             {
                 var selection = new List<TC_Data_API_3>();
-                var filePath = Directory.GetCurrentDirectory() + "\\InputFromAPI_3.json";
+                var filePath = Directory.GetCurrentDirectory() + "\\" + OutputFileName;
 
                 if (string.IsNullOrWhiteSpace(systemType) || !File.Exists(filePath))
                 {
@@ -120,7 +123,7 @@ namespace WebAPI_3.Services
                 var initialJsonFile = File.ReadAllText(fullPath);
 
                 var tc_Data = JsonConvert.DeserializeObject<TC_Data[]>(initialJsonFile);
-                var tcApiDataList = new List<TC_Data_API_2>();
+                var tcApiDataList = new List<TC_Data>();
 
                 foreach (var item in tc_Data)
                 {
@@ -129,14 +132,16 @@ namespace WebAPI_3.Services
                     {
                         continue;
                     }
-
+                    // Notification_Type_Etxt
                     var vrdDataList = vrdData.ResultSet.First();
                     var manufacturerRecallNumber = vrdDataList.FirstOrDefault(x => x.Name.Equals(Manufacturer_Recall_No_Txt)).Value.Literal;
                     var categoryETXT = vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Etxt)).Value.Literal;
                     var categoryFTXT = vrdDataList.FirstOrDefault(x => x.Name.Equals(Category_Ftxt)).Value.Literal;
+                    var notificationTypeEtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(Notification_Type_Etxt)).Value.Literal;
+                    var notificationTypeFtxt = vrdDataList.FirstOrDefault(x => x.Name.Equals(Notification_Type_Ftxt)).Value.Literal;
 
 
-                    tcApiDataList.Add(new TC_Data_API_2()
+                    tcApiDataList.Add(new TC_Data()
                     {
                         RecallNumber = item.RecallNumber,
                         ManufactureName = item.ManufactureName,
@@ -145,7 +150,9 @@ namespace WebAPI_3.Services
                         RecallYear = item.RecallYear,
                         ManufacturerRecallNumber = manufacturerRecallNumber,
                         CategoryETXT = categoryETXT,
-                        CategoryFTXT = categoryFTXT
+                        CategoryFTXT = categoryFTXT,
+                        NotificationTypeETXT = notificationTypeEtxt,
+                        NotificationTypeFTXT = notificationTypeFtxt
                     });
                 }
 

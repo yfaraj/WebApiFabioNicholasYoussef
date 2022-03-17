@@ -116,3 +116,4 @@ C:\TC_Project\WebAPI_3\Debug\netcoreapp3.1\WebAPI_3.runtimeconfig.json
 C:\TC_Project\WebAPI_3\Debug\netcoreapp3.1\WebAPI_3.runtimeconfig.dev.json
 C:\TC_Project\WebAPI_3\Debug\netcoreapp3.1\WebAPI_3.dll
 C:\TC_Project\WebAPI_3\Debug\netcoreapp3.1\WebAPI_3.pdb
+C:\TC_Project\WebAPI_3\Debug\netcoreapp3.1\OutputFromAPI_3.json

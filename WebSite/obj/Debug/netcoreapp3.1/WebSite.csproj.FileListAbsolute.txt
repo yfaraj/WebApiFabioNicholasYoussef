@@ -382,3 +382,8 @@ C:\TC_Project\WebSite\Debug\netcoreapp3.1\WebSite.dll
 C:\TC_Project\WebSite\Debug\netcoreapp3.1\WebSite.pdb
 C:\TC_Project\WebSite\Debug\netcoreapp3.1\WebSite.Views.dll
 C:\TC_Project\WebSite\Debug\netcoreapp3.1\WebSite.Views.pdb
+C:\TC_Project\WebSite\Debug\netcoreapp3.1\bin\Debug\netcoreapp3.1\Upload\output.json
+C:\TC_Project\WebSite\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\Upload\DataFile.json
+C:\TC_Project\WebSite\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\Upload\TC_Data.json
+C:\TC_Project\WebSite\Debug\netcoreapp3.1\Upload\output.json
+C:\TC_Project\WebSite\Debug\netcoreapp3.1\OutputFromAPI_3.json
