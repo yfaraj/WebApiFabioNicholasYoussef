@@ -9,7 +9,7 @@ Software needed to compile and build the project:
 4. download and install Git from https://git-scm.com/downloads
 
 
-Setup Process:
+Setup Process for the assessment evaluation:
 1 - Access the GitHub repo above and clone it locally
 2 - Please make sure that multiple startup projects are set including the following projects: 
     - WebSite
