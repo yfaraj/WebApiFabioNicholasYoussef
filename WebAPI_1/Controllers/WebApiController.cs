@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Security;
+using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -45,7 +46,7 @@ namespace WebAPI_1.Controllers
                {
                     string rN = tcDataArray[i].RecallNumber;
 
-                    string baseAddress = "https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/2015321";
+                    string baseAddress = "https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/" + rN;
                     var client3 = new RestClient(baseAddress);
                     var request = new RestRequest(baseAddress, Method.Get);
                     request.AddHeader("Content-Type", "application/json");
@@ -117,7 +118,8 @@ namespace WebAPI_1.Controllers
                }
 
                string json = JsonConvert.SerializeObject(tcApiDataList);
-               System.IO.File.WriteAllText(@"output.json", json);
+               string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+               System.IO.File.WriteAllText(path +"/output.json", json);
 
                return Ok();
           }
@@ -135,7 +137,8 @@ namespace WebAPI_1.Controllers
           {
                string jsonFileData = "";
 
-               jsonFileData = System.IO.File.ReadAllText(@"output.json");
+               string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+               jsonFileData = System.IO.File.ReadAllText(path + "/output.json");
                var json = JsonConvert.DeserializeObject<List<TC_Data_API_1>>(jsonFileData);
 
                return Ok(json);
@@ -156,11 +159,12 @@ namespace WebAPI_1.Controllers
                string jsonFileData = "";
                List<TC_Data_API_1> result = new List<TC_Data_API_1>();
 
-               jsonFileData = System.IO.File.ReadAllText(@"output.json");
+               string path = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+               jsonFileData = System.IO.File.ReadAllText(path + "/output.json");
                var json = JsonConvert.DeserializeObject<List<TC_Data_API_1>>(jsonFileData);
                foreach(TC_Data_API_1 tcDataAPI1 in json)
                {
-                    if(tcDataAPI1.ManufactureName == manufacturerRecallNumber)
+                    if(tcDataAPI1.ManufacturerRecallNumber == manufacturerRecallNumber)
                     {
                          result.Add(tcDataAPI1);
                     }

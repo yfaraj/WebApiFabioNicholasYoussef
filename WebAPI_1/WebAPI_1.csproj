@@ -15,5 +15,11 @@
     <ProjectReference Include="..\CommonStructures\CommonStructures.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="output.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 
 </Project>
