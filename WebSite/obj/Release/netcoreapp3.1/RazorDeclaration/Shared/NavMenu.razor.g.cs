@@ -139,7 +139,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 43 "C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\Shared\NavMenu.razor"
+#line 38 "C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

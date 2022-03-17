@@ -101,3 +101,26 @@ C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebAp
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebApiUnitTests\obj\Release\netcoreapp3.1\WebApiUnitTests.dll
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebApiUnitTests\obj\Release\netcoreapp3.1\WebApiUnitTests.pdb
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebApiUnitTests\obj\Release\netcoreapp3.1\WebApiUnitTests.genruntimeconfig.cache
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\CoverletSourceRootsMapping
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\testhost.dll
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\bin\Debug\netcoreapp3.1\CommonStructures.deps.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\bin\Debug\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\bin\Debug\netcoreapp3.1\TC_Data.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\bin\Release\netcoreapp3.1\CommonStructures.deps.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\bin\Release\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\bin\Release\netcoreapp3.1\TC_Data.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\TC_Data.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\testhost.exe
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\Microsoft.TestPlatform.PlatformAbstractions.dll
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\NUnit3.TestAdapter.dll
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\NUnit3.TestAdapter.pdb
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\nunit.engine.dll
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\nunit.engine.api.dll
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\nunit.engine.core.dll
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\testcentric.engine.metadata.dll
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\WebApiUnitTests.deps.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\WebApiUnitTests.runtimeconfig.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\WebApiUnitTests.runtimeconfig.dev.json
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\WebApiUnitTests.dll
+C:\TC_Project\WebApiUnitTests\Release\netcoreapp3.1\WebApiUnitTests.pdb

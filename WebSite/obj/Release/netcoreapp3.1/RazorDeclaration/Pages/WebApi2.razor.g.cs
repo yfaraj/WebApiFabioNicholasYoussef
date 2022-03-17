@@ -140,7 +140,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi2.razor"
+#line 81 "C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi2.razor"
        
     private IEnumerable<TC_Data> tc_Data = null;
     private string postDataResponse = string.Empty;
@@ -176,7 +176,7 @@ using System.IO;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload fileUpload { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi1Service _webApi2Service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi2Service _webApi2Service { get; set; }
     }
 }
 #pragma warning restore 1591

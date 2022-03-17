@@ -105,7 +105,6 @@ C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSi
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\WebSite.RazorComponent.input.cache
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\LoadData.razor.g.cs
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\WebApi1.razor.g.cs
@@ -175,7 +174,6 @@ C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSi
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\WebSite.RazorCoreGenerate.cache
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\App.razor.g.cs
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
-C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\Pages\LoadData.razor.g.cs
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\Pages\WebApi1.razor.g.cs
@@ -387,3 +385,7 @@ C:\TC_Project\WebSite\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\Upload\DataF
 C:\TC_Project\WebSite\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\Upload\TC_Data.json
 C:\TC_Project\WebSite\Debug\netcoreapp3.1\Upload\output.json
 C:\TC_Project\WebSite\Debug\netcoreapp3.1\OutputFromAPI_3.json
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\WebApi2.razor.g.cs
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\WebApi4.razor.g.cs
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\Pages\WebApi2.razor.g.cs
+C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\WebSite\obj\Debug\netcoreapp3.1\Razor\Pages\WebApi4.razor.g.cs

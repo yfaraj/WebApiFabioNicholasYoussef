@@ -176,7 +176,7 @@ using System.IO;
 #line hidden
 #nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload fileUpload { get; set; }
-        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi1Service _webApi4Service { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi4Service _webApi4Service { get; set; }
     }
 }
 #pragma warning restore 1591
