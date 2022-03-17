@@ -1,14 +1,9 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using WebSite.Data;
 using WebSite.Services;
 
 namespace WebSite
@@ -28,7 +23,6 @@ namespace WebSite
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
 
             services.AddHttpClient<IWebApi1Service, WebApi1Service>(client =>
             {
@@ -68,7 +62,7 @@ namespace WebSite
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapBlazorHub();
+                endpoints.MapBlazorHub(options => options.WebSockets.CloseTimeout = new TimeSpan(1, 1, 1));
                 endpoints.MapFallbackToPage("/_Host");
             });
         }

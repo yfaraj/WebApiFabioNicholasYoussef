@@ -172,12 +172,6 @@ using System.IO;
         tc_Data = await _webApi1Service.Search(searchItem);
     }
 
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    await base.OnInitializedAsync();
-    //    TC_Data = await _webApi1Service.LoadData();
-    //}
-
 #line default
 #line hidden
 #nullable disable

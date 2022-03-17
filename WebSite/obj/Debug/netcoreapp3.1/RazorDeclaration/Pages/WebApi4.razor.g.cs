@@ -131,6 +131,7 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
+    [Microsoft.AspNetCore.Components.RouteAttribute("/webapi4")]
     public partial class WebApi4 : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -138,6 +139,44 @@ using System.IO;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 89 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi4.razor"
+       
+    private IEnumerable<TC_Data> tc_Data = null;
+    private string postDataResponse = string.Empty;
+    private string searchItem;
+
+    IFileListEntry file;
+
+    async Task HandleFileSelected(IFileListEntry[] files)
+    {
+        file = files.FirstOrDefault();
+        if (file != null)
+        {
+            await fileUpload.UploadAsync(file);                        
+        }
+    }
+
+    async Task PostData()
+    {
+        postDataResponse = await _webApi4Service.PostData();
+    }
+    
+    async Task LoadData()
+    {
+        tc_Data = await _webApi4Service.LoadData();        
+    }
+
+    async Task SearchItem()
+    {
+        tc_Data = await _webApi4Service.Search(searchItem);
+    }
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload fileUpload { get; set; }
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi1Service _webApi4Service { get; set; }
     }
 }
 #pragma warning restore 1591

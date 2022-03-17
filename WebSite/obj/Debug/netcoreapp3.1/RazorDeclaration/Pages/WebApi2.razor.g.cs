@@ -171,11 +171,6 @@ using System.IO;
     {
         tc_Data = await _webApi2Service.LoadData();        
     }
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    await base.OnInitializedAsync();
-    //    TC_Data = await _webApi1Service.LoadData();
-    //}
 
 #line default
 #line hidden

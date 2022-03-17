@@ -26,3 +26,25 @@ C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\Commo
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.RazorTargetAssemblyInfo.cache
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.dll
 C:\Users\Utilisateur\Documents\Transport Canada\WebApiFabioNicholasYoussef\CommonStructures\obj\Debug\netcoreapp3.1\CommonStructures.pdb
+C:\TC_Project\Debug\netcoreapp3.1\bin\Debug\netcoreapp3.1\CommonStructures.deps.json
+C:\TC_Project\Debug\netcoreapp3.1\bin\Debug\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\Debug\netcoreapp3.1\bin\Debug\netcoreapp3.1\TC_Data.json
+C:\TC_Project\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\CommonStructures.deps.json
+C:\TC_Project\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\TC_Data.json
+C:\TC_Project\Debug\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\Debug\netcoreapp3.1\TC_Data.json
+C:\TC_Project\Debug\netcoreapp3.1\CommonStructures.deps.json
+C:\TC_Project\Debug\netcoreapp3.1\CommonStructures.dll
+C:\TC_Project\Debug\netcoreapp3.1\CommonStructures.pdb
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\bin\Debug\netcoreapp3.1\CommonStructures.deps.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\bin\Debug\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\bin\Debug\netcoreapp3.1\TC_Data.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\CommonStructures.deps.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\bin\Release\netcoreapp3.1\TC_Data.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\CSCompVehicleRecallStart.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\TC_Data.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\CommonStructures.deps.json
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\CommonStructures.dll
+C:\TC_Project\CommonStructures\Debug\netcoreapp3.1\CommonStructures.pdb

@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+	  <BaseOutputPath>C:\TC_Project\WebApiUnitTests</BaseOutputPath>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>

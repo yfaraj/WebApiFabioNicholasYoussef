@@ -95,7 +95,7 @@ namespace WebAPI_3.Services
 
                 var fileData = File.ReadAllTextAsync(filePath).Result;
                 var deserializeData = JsonConvert.DeserializeObject<List<TC_Data_API_3>>(fileData);
-                selection = deserializeData.Where(x => x.SystemTypeETXT == systemType || x.SystemTypeFTXT == systemType).ToList();
+                selection = deserializeData.Where(x => x.SystemTypeETXT.ToLowerInvariant().Contains(systemType) || x.SystemTypeFTXT.ToLowerInvariant().Contains(systemType)).ToList();
 
                 return JsonConvert.SerializeObject(selection);
             }

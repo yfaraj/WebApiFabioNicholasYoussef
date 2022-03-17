@@ -7,7 +7,7 @@ namespace WebSite.Services
     public interface IWebApi4Service
     {
         Task<IEnumerable<TC_Data>> LoadData();
-        Task<IEnumerable<TC_Data>> PostData();
-        Task<IEnumerable<TC_Data>> Search();
+        Task<string> PostData();
+        Task<IEnumerable<TC_Data>> Search(string systemType);
     }
 }

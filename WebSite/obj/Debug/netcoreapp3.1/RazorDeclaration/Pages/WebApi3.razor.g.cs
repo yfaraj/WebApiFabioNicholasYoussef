@@ -140,7 +140,7 @@ using System.IO;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 89 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi3.razor"
+#line 93 "C:\01-LAB\TC\WebApiFabioNicholasYoussef\WebSite\Pages\WebApi3.razor"
        
     private IEnumerable<TC_Data> tc_Data = null;
     private string postDataResponse = string.Empty;
@@ -172,6 +172,26 @@ using System.IO;
         tc_Data = await _webApi3Service.Search(searchItem);
     }
 
+    //DownloadFile
+    private async Task DownloadFile()
+    {
+        //var fileStream = new MemoryStream();
+        //var solutionDir = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\" + ;
+        //var fileName = "log.bin";
+
+        //using var streamRef = new DotNetStreamReference(stream: fileStream);
+
+        //await JS.InvokeVoidAsync("downloadFileFromStream", fileName, streamRef);
+    }
+
+    private Stream GetFileStream()
+    {
+        var fileStream = new MemoryStream();
+        return fileStream;
+    }
+
+
+
     //protected override async Task OnInitializedAsync()
     //{
     //    await base.OnInitializedAsync();
@@ -181,6 +201,7 @@ using System.IO;
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload fileUpload { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IWebApi3Service _webApi3Service { get; set; }
     }
