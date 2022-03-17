@@ -1,6 +1,17 @@
 The solution is hosted in GitHub:
 https://github.com/yfaraj/WebApiFabioNicholasYoussef
 
+Installation Process:
+1 - Access the GitHub repo above and clone it locally
+2 - Please make sure muiltiple startup project are set including the following projects: 
+    - WebSite
+    - WebAPI_1
+    - WebAPI_2
+    - WebAPI_3
+    - WebAPI_4
+3 - Build the solution so all project get a fresh built
+4 - Run in Debug mode and so you can test as you wish. If you get any IIS problem, or any other issue that block you from test the system, please delete all obj and bin folders and then Build again. It should solve the problem.
+
 The solution contains 6 projects:
 1. CommonStructures
 This project contains shared data structures
